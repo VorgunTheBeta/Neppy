@@ -1,0 +1,70 @@
+import discord
+import asyncio
+
+description = "A bot created by VorgunTheBeta"
+utils = discord.utils
+bot = discord.Client()
+game = discord.Game()
+user = discord.User()
+        
+
+               
+@bot.event
+@asyncio.coroutine
+def on_message(message):
+        if message.content.startswith('?hello'):
+                result = "Hello there~"
+                yield from bot.send_message(message.channel, result)
+        elif message.content.startswith('?sleep'):
+                    if message.author.name == 'VorgunTheBeta' or message.author.name == 'WolfRavN' or message.author.name == 'Summonee':
+                          yield from bot.send_message(message.channel, "What, you don't like me?")
+                          user.id = 127188004216373248
+                          yield from bot.send_message(user, "NepBot is down")
+                          print('message recieved')
+                          exit()
+                    else:
+                          yield from bot.send_message(message.channel, "http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
+        elif message.content.startswith('?status'):
+                    if message.author.name == 'VorgunTheBeta' or message.author.name == 'WolfRavN' or message.author.name == 'Summonee':
+                        msg = yield from bot.wait_for_message(timeout=5.0, author=message.author)
+                        
+                        game.name = msg.content
+                        yield from bot.change_status(game)
+                        return
+                    else:
+                        yield from bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
+        elif message.content.startswith('?pingvorg'):
+            yield from bot.send_message(message.channel, "<@127188004216373248>")
+        elif message.content.startswith('?recommended browser'):
+            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi. \nhttps://vivaldi.com/?lang=en")
+        elif message.content.startswith('?recommended text editor'):
+            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets. \nhttp://brackets.io/")
+        elif message.content.startswith('?mods'):
+            yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!")
+        elif message.content.startswith('?info'):
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>. \nHere are my commands =```?hello, ?recommended browser, ?recommended text editor, ?mods```")
+        elif message.content.startswith('?lol'):
+            yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
+        elif message.content.startswith('limewire'):
+            yield from bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
+			
+@bot.event
+@asyncio.coroutine
+def on_member_join(member):
+		channel = discord.Object(id='155225555598442496')
+		message = "{0.name} has joined the server~"
+		yield from bot.send_message(channel, message.format(member))
+
+@bot.event
+@asyncio.coroutine
+def on_ready():
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('-----')
+
+
+
+
+bot.run('vorgunthebeta@gmail.com', 'kazza10')
+        
