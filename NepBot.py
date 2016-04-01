@@ -35,18 +35,22 @@ def on_message(message):
                         yield from bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
         elif message.content.startswith('?pingvorg'):
             yield from bot.send_message(message.channel, "<@127188004216373248>")
-        elif message.content.startswith('?recommended browser'):
-            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi. \nhttps://vivaldi.com/?lang=en")
-        elif message.content.startswith('?recommended text editor'):
-            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets. \nhttp://brackets.io/")
+        elif message.content.startswith('?rec browser'):
+            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
+        elif message.content.startswith('?rec txt editor'):
+            yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
+        elif message.content.startswith('?rec dev site'):
+       	    yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
         elif message.content.startswith('?mods'):
-            yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!")
+            yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info'):
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>. \nHere are my commands =```?hello, ?recommended browser, ?recommended text editor, ?mods```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb```")
         elif message.content.startswith('?lol'):
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire'):
             yield from bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
+       	elif message.content.startswith('?reverb'):
+       	    yield from bot.send_message(message.channel, "Ravensoft recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
 			
 @bot.event
 @asyncio.coroutine
