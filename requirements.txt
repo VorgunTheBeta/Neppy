@@ -1,0 +1,10 @@
+aiohttp==0.21.4
+chardet==2.3.0
+-e git+https://github.com/Rapptz/discord.py@async#egg=discord.py
+gitdb==0.6.4
+GitPython==1.0.2
+requests==2.9.1
+smmap==0.9.0
+virtualenv==15.0.1
+websockets==2.7
+ws4py==0.3.4
