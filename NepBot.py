@@ -50,7 +50,7 @@ def on_message(message):
         elif message.content.startswith('limewire'):
             yield from bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
        	elif message.content.startswith('?reverb'):
-       	    yield from bot.send_message(message.channel, "Ravensoft recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
+       	    yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
 			
 @bot.event
 @asyncio.coroutine
