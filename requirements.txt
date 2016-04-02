@@ -1,6 +1,6 @@
 aiohttp==0.21.4
 chardet==2.3.0
-PyNaCl==1.0.1
+cffi>=1.5.2
 -e git+https://github.com/Rapptz/discord.py@async#egg=discord.py
 gitdb==0.6.4
 GitPython==1.0.2
