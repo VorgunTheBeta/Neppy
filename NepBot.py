@@ -16,7 +16,7 @@ def on_message(message):
                 result = "Hello there~"
                 yield from bot.send_message(message.channel, result)
         elif message.content.startswith('?sleep'):
-                    if message.author.id == '127188004216373248' or message.author.name == 'WolfRavN' or message.author.name == 'Summonee':
+                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944':
                           yield from bot.send_message(message.channel, "What, you don't like me?")
                           user.id = 127188004216373248
                           yield from bot.send_message(user, "NepBot is down")
