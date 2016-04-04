@@ -44,7 +44,7 @@ def on_message(message):
         elif message.content.startswith('?mods'):
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info'):
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug```")
         elif message.content.startswith('?lol'):
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire'):
@@ -52,7 +52,7 @@ def on_message(message):
        	elif message.content.startswith('?reverb'):
        	    yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
        	elif message.content.startswith('?plug'):
-       	    yield from bot.send_message(message.channel, "https://valiantghost.com/ ~~ Created by Summonee /nMessage <@127188004216373248> to have your site added~")
+       	    yield from bot.send_message(message.channel, "https://valiantghost.com/ ~~ Created by Summonee \nMessage <@127188004216373248> to have your site added~")
 			
 @bot.event
 @asyncio.coroutine
