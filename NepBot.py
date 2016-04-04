@@ -53,6 +53,8 @@ def on_message(message):
        	    yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
        	elif message.content.startswith('?plug'):
        	    yield from bot.send_message(message.channel, "https://valiantghost.com/ ~ Created by Summonee \nhttp://www.ldsgamers.com/ ~ Created by mechwd \nMessage <@127188004216373248> to have your site added~")
+       	elif message.content.startswith('?shit'):
+       	    yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
 			
 @bot.event
 @asyncio.coroutine
