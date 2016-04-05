@@ -44,7 +44,7 @@ def on_message(message):
         elif message.content.startswith('?mods'):
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info'):
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?shit,?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?shit,?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google```")
         elif message.content.startswith('?lol'):
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire'):
