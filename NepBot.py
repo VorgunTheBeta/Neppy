@@ -56,7 +56,7 @@ def on_message(message):
        	elif message.content.startswith('?shit'):
        	    yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
 	elif message.content.startswith('?google'):	
-	    google = message.content.replace('?google ', '').replace(/ /g, '+')
+	    google = message.content.replace('?google ', '').replace(' ', '+')
 	    send = 'https://google.com/search?q=' + google
 	    yield from bot.send_message(message.channel, send)
 @bot.event
