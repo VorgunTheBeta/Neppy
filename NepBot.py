@@ -25,7 +25,7 @@ def on_message(message):
                     else:
                           yield from bot.send_message(message.channel, "http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
         elif message.content.startswith('?status'):
-                    if message.author.name == 'VorgunTheBeta' or message.author.name == 'WolfRavN' or message.author.name == 'Summonee':
+                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944':
                         msg = yield from bot.wait_for_message(timeout=5.0, author=message.author)
                         
                         game.name = msg.content
