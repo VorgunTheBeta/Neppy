@@ -70,7 +70,7 @@ def on_message(message):
 @asyncio.coroutine
 def on_member_join(member):
 		channel = discord.Object(id='155225555598442496')
-		message = "{0.name} has joined the server~"
+		message = "{0.name} has joined the server~ <@127010252934610944>"
 		yield from bot.send_message(channel, message.format(member))
 
 @bot.event
