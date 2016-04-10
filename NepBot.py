@@ -54,7 +54,7 @@ def on_message(message):
        	elif message.content.startswith('?plug'):
     	    yield from bot.send_message(message.channel, "https://valiantghost.com/ ~ Created by Summonee \nhttp://www.ldsgamers.com/ ~ Created by mechwd \nMessage <@127188004216373248> to have your site added~")
        	elif message.content.startswith('?shit'):
-       	    yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
+       	    yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
        	elif message.content.startswith('?google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
