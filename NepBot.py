@@ -19,7 +19,7 @@ def on_message(message):
                     if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944':
                           yield from bot.send_message(message.channel, "What, you don't like me?")
                           user.id = 127188004216373248
-                          yield from bot.send_message(user, "NepBot is down")
+                          yield from bot.send_message(user, "Neppy is down")
                           print('message recieved')
                           exit()
                     else:
@@ -85,7 +85,7 @@ def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-
+    bot.change_status(null)
 
 
 
