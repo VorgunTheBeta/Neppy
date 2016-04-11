@@ -89,5 +89,5 @@ def on_ready():
 
 
 
-bot.start('vorgunthebeta@gmail.com', 'kazza10')
+bot.run('vorgunthebeta@gmail.com', 'kazza10')
         
