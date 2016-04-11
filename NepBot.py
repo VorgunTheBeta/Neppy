@@ -21,7 +21,7 @@ def on_message(message):
                           user.id = 127188004216373248
                           yield from bot.send_message(user, "Neppy is down")
                           print('message recieved')
-                          exit()
+                          discord.close()
                     else:
                           yield from bot.send_message(message.channel, "http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
         elif message.content.startswith('?status'):
