@@ -35,7 +35,7 @@ def on_message(message):
                         yield from bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
         elif message.content.startswith('?pingvorg'):
             yield from bot.send_message(message.channel, "<@127188004216373248>")
-        elif message.content.startswith('?rec browser'):
+        elif message.content.startswith('?rec browser') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
         elif message.content.startswith('?rec txt editor'):
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
