@@ -64,8 +64,6 @@ def on_message(message):
             yield from bot.send_message(message.channel, send)
         elif message.content.startswith('The More You Know'):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
-        elif message.author.id=='127067362372354048':
-            yield from bot.send_message(message.channel, "Are you trying to hurt me Dan? You are such a meany~")
         elif message.content.startswith('pudding'):
             yield from bot.send_message(message.channel, "http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg \nPUDDING~")
        	    
