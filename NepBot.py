@@ -62,7 +62,7 @@ def on_message(message):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
             yield from bot.send_message(message.channel, send)
-        elif message.content.startswith('The More You Know'):
+        elif message.content.startswith('The More You Know') or message.content.startswith('the more you know'):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif message.content.startswith('pudding'):
             yield from bot.send_message(message.channel, "http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg \nPUDDING~")
