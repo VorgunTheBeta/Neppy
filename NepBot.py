@@ -73,7 +73,7 @@ def on_message(message):
         elif message.content.startswith('?mpm'):
             yield from bot.send_message(message.channel, "/p https://www.youtube.com/watch?v=bGbdrLQWZpo")
         elif message.content.startswith('updoot'):
-            msg = "{0.mention} likes this song~"
+            msg = "{0.name} likes this song~"
             yield from bot.send_message(message.channel, msg.format(message.author))
        	    
        	    
