@@ -47,7 +47,7 @@ def on_message(message):
         elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google```")
         elif message.content.startswith('?help') and message.author.server.id=='99333280020566016':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?google, The More You Know, pudding, ?help```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?google, The More You Know, pudding, ?help, ?smug```")
         elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
@@ -66,7 +66,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif message.content.startswith('pudding'):
             yield from bot.send_message(message.channel, "http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg \nPUDDING~")
-       	    
+        elif message.content.startswith('?smug'):
+            yield from bot.send_message(message.channel, "http://41.media.tumblr.com/eae2e1da5f744b4058274b7f3ce93463/tumblr_nn129eZTXb1urtbs9o1_1280.png")
        	    
        	    
        	    
