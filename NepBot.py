@@ -69,9 +69,9 @@ def on_message(message):
         elif message.content.startswith('?smug'):
             yield from bot.send_message(message.channel, "http://41.media.tumblr.com/eae2e1da5f744b4058274b7f3ce93463/tumblr_nn129eZTXb1urtbs9o1_1280.png")
         elif message.content.startswith('?dtrip'):
-            yield from bot.send_message(message.channel, "/p https://www.youtube.com/watch?v=LHOEUrFOX4Y")
+            yield from bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=LHOEUrFOX4Y")
         elif message.content.startswith('?mpm'):
-            yield from bot.send_message(message.channel, "/p https://www.youtube.com/watch?v=bGbdrLQWZpo")
+            yield from bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=bGbdrLQWZpo")
         elif message.content.startswith('updoot'):
             msg = "{0.name} likes this song~"
             yield from bot.send_message(message.channel, msg.format(message.author))
