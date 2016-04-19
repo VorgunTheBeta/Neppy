@@ -67,7 +67,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif 'pudding'in message.content and message.author.id != '167981908918140928':
             image = random.choice(["http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg", "https://gotgame.com/wp-content/uploads/2015/02/pudding.jpg", "https://53rg10.files.wordpress.com/2013/09/commie_hyperdimension_neptunia_the_animation_-_10_643170f6-mkv_snapshot_19-17_2013-09-14_16-22-45.jpg", "https://media.giphy.com/media/QfUwLcZ1cbaOQ/giphy.gif", "https://i.ytimg.com/vi/2I4Sjqn17QI/hqdefault.jpg"])
-            msg = image + "PUDDING~"	
+            msg = image + " \nPUDDING~"	
             yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?smug'):
             yield from bot.send_message(message.channel, "http://41.media.tumblr.com/eae2e1da5f744b4058274b7f3ce93463/tumblr_nn129eZTXb1urtbs9o1_1280.png")
