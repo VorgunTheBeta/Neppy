@@ -64,7 +64,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, send)
         elif message.content.startswith('The More You Know') or message.content.startswith('the more you know'):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
-        elif message.content.contains('pudding'):
+        elif 'pudding'in message.content:
             yield from bot.send_message(message.channel, "http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg \nPUDDING~")
         elif message.content.startswith('?smug'):
             yield from bot.send_message(message.channel, "http://41.media.tumblr.com/eae2e1da5f744b4058274b7f3ce93463/tumblr_nn129eZTXb1urtbs9o1_1280.png")
