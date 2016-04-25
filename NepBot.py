@@ -100,5 +100,5 @@ def on_ready():
 
 
 
-bot.run('vorgunthebeta@gmail.com', 'kazza10')
+bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
         
