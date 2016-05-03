@@ -78,6 +78,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=LHOEUrFOX4Y")
         elif message.content.startswith('?mpm'):
             yield from bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=bGbdrLQWZpo")
+        elif message.content.startswith('?shock'):
+            yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/176951338356178945/jeepers.gif")
        	    
 @bot.event
 @asyncio.coroutine
