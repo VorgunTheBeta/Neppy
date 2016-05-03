@@ -63,6 +63,10 @@ def on_message(message):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
             yield from bot.send_message(message.channel, send)
+        elif message.content.startswith('?imfeelinglucky'):
+            google = message.content.replace('?imfeelinglucky ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
+            send = 'https://google.com/search?btnI=&q=' + google
+            yield from bot.send_message(message.channel, send)
         elif message.content.startswith('The More You Know') or message.content.startswith('the more you know'):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif 'pudding' in message.content.lower() and message.author.id != '167981908918140928':
