@@ -80,10 +80,12 @@ def on_message(message):
             yield from bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=bGbdrLQWZpo")
         elif message.content.startswith('?shock'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/176951338356178945/jeepers.gif")
-        elif "neppy!" in message.content and message.author.id=='120980798550573056' or message.author.id=='84554337220567040':
+        elif "neppy!" in message.content and message.author.id=='120980798550573056':
             msg = "{0.mention}!"
             yield from bot.send_message(message.channel, msg.format(message.author))
-       	    
+        elif "neppy!" in message.content and message.author.id=='84554337220567040':
+            msg = "{0.mention}!"
+            yield from bot.send_message(message.channel, msg.format(message.author))
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
