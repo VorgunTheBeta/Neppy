@@ -47,7 +47,7 @@ def on_message(message):
         elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term]```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?google [search term], ?imfeelinglucky [search term], The More You Know, pudding, ?help, ?smug, ?shock```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock```")
         elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
@@ -68,7 +68,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, send)
         elif message.content.startswith('The More You Know') or message.content.startswith('the more you know'):
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
-        elif message.content.startswith('?pudding'):
+        elif message.content.startswith('?pudding') and message.author.bot == false:
             image = random.choice(["http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg", "https://gotgame.com/wp-content/uploads/2015/02/pudding.jpg", "https://53rg10.files.wordpress.com/2013/09/commie_hyperdimension_neptunia_the_animation_-_10_643170f6-mkv_snapshot_19-17_2013-09-14_16-22-45.jpg", "https://media.giphy.com/media/QfUwLcZ1cbaOQ/giphy.gif", "https://i.ytimg.com/vi/2I4Sjqn17QI/hqdefault.jpg", "https://31.media.tumblr.com/f89a86fff4d005aaeb2ff96afe166d86/tumblr_inline_ncxdqpuqSH1rejbig.gif"])
             msg = image + " \nPUDDING~"	
             yield from bot.send_message(message.channel, msg)
