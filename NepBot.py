@@ -28,9 +28,8 @@ def on_message(message):
                           yield from bot.send_message(message.channel, "http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
         elif message.content.startswith('?status'):
                     if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448':
-                        msg = yield from bot.wait_for_message(timeout=5.0, author=message.author)
-                        
-                        game.name = msg.content
+                        msg = message.content.replace('?status ', '')
+                        game.name = msg
                         yield from bot.change_status(game)
                         return
                     else:
