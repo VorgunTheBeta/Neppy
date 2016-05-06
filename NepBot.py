@@ -94,6 +94,7 @@ def on_message(message):
             f = open('{0}', 'a').format(userid)
             msg = message.content.replace('?note ','')
             f.write(msg)
+            print('Message written')
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
