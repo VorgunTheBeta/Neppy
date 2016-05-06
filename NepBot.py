@@ -96,7 +96,7 @@ def on_message(message):
             f.write(msg)
             f.close()
             print('Message written')
-        elif message.conent =="?notes":
+        elif message.content =="?notes":
             userid= mesasge.author.id
             f = open(userid)
             msg = f.read()
