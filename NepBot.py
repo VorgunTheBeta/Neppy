@@ -122,7 +122,7 @@ def on_message(message):
             if result.matches[0] == '':
                 yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")    
             else:
-                dbclient.files_download_to_file('','/'+fname)
+                dbclient.files_download_to_file('/'+fname,'/'+fname)
                 g = open(fname)
                 mes = g.read()
                 yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
