@@ -105,9 +105,11 @@ def on_message(message):
             f = open(fname, 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
+            result = dbclient.files_search('/', userid, start=0,max_results=100,mode=SearchMode('filename',None))
             dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.update, client_modified=datetime.datetime.now(),mute=True)
             f.close()
             print('Message written')
+            print(result.matches[0])
         elif message.content =="?notes":
             userid= message.author.id
             if os.path.isfile(userid+".txt"):
