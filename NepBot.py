@@ -104,7 +104,7 @@ def on_message(message):
             f = open(fname, 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
-            response = dbclient.files_upload(f, fname)
+            response = dbclient.files_upload(f, "/"+fname)
             f.close()
             print('Message written')
             print('uploaded', responce)
@@ -116,7 +116,7 @@ def on_message(message):
                 f.close()
                 yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
             else:
-            	yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you...~")
+            	yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")
 
 @bot.event
 @asyncio.coroutine
