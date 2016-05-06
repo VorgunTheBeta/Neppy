@@ -112,7 +112,7 @@ def on_message(message):
             else:
                g = open(fname)
                mes = g.read()
-                dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
+               dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
            
             print('Message written')
         elif message.content =="?notes":
