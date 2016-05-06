@@ -143,6 +143,7 @@ def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
+    print(discord.version)
     print('-----')
 
 
