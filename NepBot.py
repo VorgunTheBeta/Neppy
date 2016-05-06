@@ -106,7 +106,7 @@ def on_message(message):
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
             result = dbclient.files_search('', userid, start=0,max_results=100)
-            dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.update, client_modified=datetime.datetime.now(),mute=True)
+            dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
             f.close()
             print('Message written')
             print(result.matches[0])
