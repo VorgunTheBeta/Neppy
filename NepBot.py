@@ -9,7 +9,7 @@ import dropbox
 app_key = 'oftivivyqtuiicu'
 app_secret = 'igg65mw0d65duuk'
 
-flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
+#flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
 dbclient = dropbox.client.DropboxClient("hLV5aeCyroAAAAAAAAAABxoK294BSQXMAqGwkCqQOK_LCnKle4EpDE0gplny4zcT")
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
