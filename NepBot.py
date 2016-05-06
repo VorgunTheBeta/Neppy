@@ -91,14 +91,14 @@ def on_message(message):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         elif message.content.startswith('?mknote'):
             userid= message.author.id
-            f = open(userid, 'a')
+            f = open(userid+".txt", 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg)
             f.close()
             print('Message written')
         elif message.content =="?notes":
             userid= message.author.id
-            f = open(userid)
+            f = open(userid+".txt")
             msg = f.read()
             yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
 @bot.event
