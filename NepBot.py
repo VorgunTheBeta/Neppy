@@ -10,7 +10,7 @@ app_key = 'oftivivyqtuiicu'
 app_secret = 'igg65mw0d65duuk'
 
 #flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
-dbclient = dropbox.client.DropboxClient("hLV5aeCyroAAAAAAAAAABxoK294BSQXMAqGwkCqQOK_LCnKle4EpDE0gplny4zcT")
+dbclient = dropbox.Dropbox("hLV5aeCyroAAAAAAAAAABxoK294BSQXMAqGwkCqQOK_LCnKle4EpDE0gplny4zcT")
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 bot = discord.Client()
@@ -104,7 +104,7 @@ def on_message(message):
             f = open(fname, 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
-            response = dbclient.put_file('./'+fname, f, True)
+            response = dbclient.put_file(f, './'+fname)
             f.close()
             print('Message written')
             print('uploaded', responce)
