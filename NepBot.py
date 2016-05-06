@@ -93,7 +93,7 @@ def on_message(message):
             userid= message.author.id
             f = open(userid+".txt", 'a')
             msg = message.content.replace('?mknote ','')
-            f.write(msg)
+            f.write(msg+"\n")
             f.close()
             print('Message written')
         elif message.content =="?notes":
