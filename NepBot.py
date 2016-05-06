@@ -117,13 +117,17 @@ def on_message(message):
             print('Message written')
         elif message.content =="?notes":
             userid= message.author.id
-            if os.path.isfile(userid+".txt"):
-                f = open(userid+".txt")
-                msg = f.read()
-                f.close()
-                yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
+            fname = userid + ".txt"
+            result = dbclient.files_search('', userid, start=0,max_results=100)
+            if result.matches[0] == '':
+                yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")    
             else:
-            	yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")
+                dbclient.files_download_to_file('','/'+fname)
+                g = open(fname)
+                mes = g.read()
+                yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
+            
+            	
 
 @bot.event
 @asyncio.coroutine
