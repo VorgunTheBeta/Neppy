@@ -45,9 +45,9 @@ def on_message(message):
         elif message.content.startswith('?mods') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term]```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term]```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock```")
         elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
@@ -86,6 +86,8 @@ def on_message(message):
         elif "neppy!" in message.content and message.author.id=='84554337220567040':
             msg = "{0.mention}!~"
             yield from bot.send_message(message.channel, msg.format(message.author))
+        elif message.content.startswith('?source'):
+            yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
