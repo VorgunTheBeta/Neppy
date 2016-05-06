@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import random
+import os.path
 
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
@@ -98,10 +99,14 @@ def on_message(message):
             print('Message written')
         elif message.content =="?notes":
             userid= message.author.id
-            f = open(userid+".txt")
-            msg = f.read()
-            f.close()
-            yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
+            if os.path.isfile(userid+".txt"):
+                f = open(userid+".txt")
+                msg = f.read()
+                f.close()
+                yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
+            else:
+            	yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you...~")
+
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
