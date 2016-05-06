@@ -89,6 +89,11 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg.format(message.author))
         elif message.content.startswith('?source'):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
+        elif message.content.startswith('?note'):
+            userid= message.author.id
+            f = open('{0}', 'a').format(userid)
+            msg = message.content.replace('?note ','')
+            f.write(msg)
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
