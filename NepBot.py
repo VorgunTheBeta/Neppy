@@ -96,6 +96,11 @@ def on_message(message):
             f.write(msg)
             f.close()
             print('Message written')
+        elif message.conent =="?notes":
+            userid= mesasge.author.id
+            f = open(userid)
+            msg = f.read()
+            yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
 @bot.event
 @asyncio.coroutine
 def on_member_join(member):
