@@ -103,7 +103,7 @@ def on_message(message):
             f = open(userid+".txt", 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
-            response = client.put_file(userid+".txt", f)
+            response = dbclient.put_file(userid+".txt", f)
             f.close()
             print('Message written')
             print('uploaded', responce)
