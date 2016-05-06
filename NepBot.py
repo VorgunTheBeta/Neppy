@@ -91,9 +91,10 @@ def on_message(message):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         elif message.content.startswith('?note'):
             userid= message.author.id
-            f = open('{0}', 'a').format(userid)
+            f = open(userid, 'a')
             msg = message.content.replace('?note ','')
             f.write(msg)
+            f.close()
             print('Message written')
 @bot.event
 @asyncio.coroutine
