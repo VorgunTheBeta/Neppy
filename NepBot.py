@@ -107,7 +107,6 @@ def on_message(message):
             dbclient.files_upload(f, "/"+fname)
             f.close()
             print('Message written')
-            print('uploaded', responce)
         elif message.content =="?notes":
             userid= message.author.id
             if os.path.isfile(userid+".txt"):
