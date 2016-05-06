@@ -89,10 +89,10 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg.format(message.author))
         elif message.content.startswith('?source'):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
-        elif message.content.startswith('?note'):
+        elif message.content.startswith('?mknote'):
             userid= message.author.id
             f = open(userid, 'a')
-            msg = message.content.replace('?note ','')
+            msg = message.content.replace('?mknote ','')
             f.write(msg)
             f.close()
             print('Message written')
