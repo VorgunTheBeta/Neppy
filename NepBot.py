@@ -2,7 +2,15 @@ import discord
 import asyncio
 import random
 import os.path
+#Include the Dropbox SDK
+import dropbox
 
+# Get your app key and secret from the Dropbox developer website
+app_key = 'oftivivyqtuiicu'
+app_secret = 'igg65mw0d65duuk'
+
+flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
+dbclient = dropbox.client.DropboxClient("hLV5aeCyroAAAAAAAAAABxoK294BSQXMAqGwkCqQOK_LCnKle4EpDE0gplny4zcT")
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 bot = discord.Client()
@@ -95,8 +103,10 @@ def on_message(message):
             f = open(userid+".txt", 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
+            response = client.put_file(userid+".txt", f)
             f.close()
             print('Message written')
+            print('uploaded', responce)
         elif message.content =="?notes":
             userid= message.author.id
             if os.path.isfile(userid+".txt"):
