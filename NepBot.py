@@ -110,10 +110,9 @@ def on_message(message):
             if result.matches[0] == '':
                 dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.add, client_modified=datetime.datetime.now(),mute=True)
             else:
-                md, res = dbclient.files_download("/"+fname)
-                data = res.content
-                mes = data + '\n '+msg
-                dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
+               g = open(fname)
+               mes = g.read()
+                dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
            
             print('Message written')
         elif message.content =="?notes":
