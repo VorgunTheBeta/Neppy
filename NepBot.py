@@ -105,7 +105,7 @@ def on_message(message):
             f = open(fname, 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
-            dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime(*time.gmtime(mtime)[:6]),mute=True)
+            dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime,mute=True)
             f.close()
             print('Message written')
         elif message.content =="?notes":
