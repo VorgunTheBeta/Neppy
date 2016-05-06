@@ -100,10 +100,11 @@ def on_message(message):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         elif message.content.startswith('?mknote'):
             userid= message.author.id
-            f = open(userid+".txt", 'a')
+            fname = userid+'.txt'
+            f = open(fname, 'a')
             msg = message.content.replace('?mknote ','')
             f.write(msg+"\n")
-            response = dbclient.put_file(userid+".txt", f)
+            response = dbclient.put_file(fname, f)
             f.close()
             print('Message written')
             print('uploaded', responce)
