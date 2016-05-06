@@ -100,6 +100,7 @@ def on_message(message):
             userid= message.author.id
             f = open(userid+".txt")
             msg = f.read()
+            f.close()
             yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
 @bot.event
 @asyncio.coroutine
