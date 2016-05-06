@@ -97,7 +97,7 @@ def on_message(message):
             f.close()
             print('Message written')
         elif message.content =="?notes":
-            userid= mesasge.author.id
+            userid= messasge.author.id
             f = open(userid)
             msg = f.read()
             yield from bot.send_message(message.channel, "Your saved notes are: "+msg)
