@@ -100,32 +100,34 @@ def on_message(message):
         elif message.content.startswith('?source'):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         elif message.content.startswith('?mknote'):
-            userid= message.author.id
-            fname = userid+'.txt'
-            f = open(fname, 'a')
-            msg = message.content.replace('?mknote ','')
-            f.write(msg+"\n")
-            result = dbclient.files_search('', userid, start=0,max_results=100)
-            f.close()
-            if result.matches[0] == '':
-                dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.add, client_modified=datetime.datetime.now(),mute=True)
-            else:
-               g = open(fname)
-               mes = g.read()
-               dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
+            yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
+            #userid= message.author.id
+            #fname = userid+'.txt'
+            #f = open(fname, 'a')
+            #msg = message.content.replace('?mknote ','')
+            #f.write(msg+"\n")
+            #result = dbclient.files_search('', userid, start=0,max_results=100)
+            #f.close()
+            #if result.matches[0] == '':
+             #   dbclient.files_upload(msg, "/"+fname, dropbox.files.WriteMode.add, client_modified=datetime.datetime.now(),mute=True)
+            #else:
+             #  g = open(fname)
+              # mes = g.read()
+               #dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
            
-            print('Message written')
+            #print('Message written')
         elif message.content =="?notes":
-            userid= message.author.id
-            fname = userid + ".txt"
-            result = dbclient.files_search('', userid, start=0,max_results=100)
-            if result.matches[0] == '':
-                yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")    
-            else:
-                dbclient.files_download_to_file('/'+fname,'/'+fname)
-                g = open(fname)
-                mes = g.read()
-                yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
+            yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
+            #userid= message.author.id
+            #fname = userid + ".txt"
+            #result = dbclient.files_search('', userid, start=0,max_results=100)
+            #if result.matches[0] == '':
+             #   yield from bot.send_message(message.channel, "I'm so sorry, but I can't seem to find any notes for you~~~")    
+            #else:
+             #   dbclient.files_download_to_file('/'+fname,'/'+fname)
+              #  g = open(fname)
+               # mes = g.read()
+               # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
             
             	
 
