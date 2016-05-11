@@ -55,9 +55,9 @@ def on_message(message):
         elif message.content.startswith('?mods') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term]```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice```")
         elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
@@ -99,6 +99,11 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg.format(message.author))
         elif message.content.startswith('?source'):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
+        elif message.content.startswith('?wat'):
+            yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
+        elif message.content.startswith('?notice'):
+            msg = "Currently ?mknote and ?notes are not fully enabled because of host issues.~ \nA new command has been added: ?wat~"
+            yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?mknote'):
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
             #userid= message.author.id
