@@ -152,7 +152,7 @@ def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-    print("Connected Servers:)
+    print("Connected Servers:")
     for s in bot.servers:
     	print(s.name)
 
