@@ -136,7 +136,7 @@ def on_message(message):
             
         elif message.content.startswith('?nickname') and message.author.id =="127188004216373248":
             nickname = message.content.replace('?nickname ','')
-            yield from bot.change_nickname(message.server, nickname)
+            yield from bot.change_nickname(message, nickname)
             prtmsg = "Nickname changed to {0} on {1.name}"
             print(prtmsg.format(nickname, message.server))
 
