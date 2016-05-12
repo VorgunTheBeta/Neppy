@@ -139,7 +139,7 @@ def on_message(message):
         elif bot.user.mentioned_in(message):
             yield from bot.send_message(message.channel, "Yes?~~~")
         elif message.content.startswith("?joinserver"):
-            yield from bot.sent_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
+            yield from bot.send_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
 
 @bot.event
 @asyncio.coroutine
