@@ -99,7 +99,7 @@ def on_message(message):
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content.startswith('?notice'):
-            msg = "Currently ?mknote and ?notes are not fully enabled because of host issues.~ \nA new command has been added: ?wat~"
+            msg = "Currently ?mknote and ?notes are not fully enabled because of host issues.~ \nA new command has been added: ?wat, ?joinserver~"
             yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?mknote'):
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
@@ -138,6 +138,8 @@ def on_message(message):
             print(prtmsg.format(nickname, message.server))
         elif bot.user.mentioned_in(message):
             yield from bot.send_message(message.channel, "Yes?~~~")
+        elif message.content.startswith("?joinserver"):
+            yield from bot.sent_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
 
 @bot.event
 @asyncio.coroutine
