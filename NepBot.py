@@ -140,8 +140,12 @@ def on_message(message):
             yield from bot.send_message(message.channel, "Yes?~~~")
         elif message.content.startswith("?joinserver"):
             yield from bot.send_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
-        elif message.content.startswith("?support"):
+        elif message.content == "?support":
             yield from bot.sent_message(message.channel, "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
+        elif message.content == "?supporters":
+            highrank = "Lance"
+            lowrank = "none"
+            yield from bot.send_message(message.channel, "Here are the awesome people who support me: "+highrank+" "+lowrank)
 
 @bot.event
 @asyncio.coroutine
