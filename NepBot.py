@@ -94,7 +94,7 @@ def on_message(message):
         elif "neppy!" in message.content:
             msg = "{0.mention}!~"
             yield from bot.send_message(message.channel, msg.format(message.author))
-        elif message.content.startswith('?source'):
+        elif message.content.startswith('?source') or message.content.startswith('?sauce'):
             yield from bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
