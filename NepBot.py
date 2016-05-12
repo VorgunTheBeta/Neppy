@@ -55,9 +55,9 @@ def on_message(message):
         elif message.content.startswith('?mods') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice```")
+            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support```")
         elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
@@ -99,7 +99,7 @@ def on_message(message):
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content.startswith('?notice'):
-            msg = "Currently ?mknote and ?notes are not fully enabled because of host issues.~ \nThe ?source command is now interchangeable with ?sauce \nA new command has been added: ?wat, ?joinserver~"
+            msg = "There is now a patreon page for helping out with finding a server and to support the development of me and any other bots, check it out with ?support.~ \nThe ?source command is now interchangeable with ?sauce \nA new command has been added: ?wat, ?joinserver~"
             yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?mknote'):
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
@@ -140,6 +140,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, "Yes?~~~")
         elif message.content.startswith("?joinserver"):
             yield from bot.send_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
+        elif message.content.startswith("?support"):
+            yield from bot.sent_message(message.channel, "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
 
 @bot.event
 @asyncio.coroutine
