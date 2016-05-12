@@ -136,6 +136,8 @@ def on_message(message):
             yield from bot.change_nickname(message.server.me, nickname)
             prtmsg = "Nickname changed to {0} on {1.name}"
             print(prtmsg.format(nickname, message.server))
+        elif bot.mention in message.content:
+            yield from bot.send_message(message.channel, "Yes?~~~")
 
 @bot.event
 @asyncio.coroutine
