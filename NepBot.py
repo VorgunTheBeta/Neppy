@@ -148,6 +148,8 @@ def on_message(message):
             highrank = "Lance"
             lowrank = "none"
             yield from bot.send_message(message.channel, "Here are the awesome people who support me: "+highrank+" "+lowrank)
+        elif message.content =="?RNG":
+            yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
 
 @bot.event
 @asyncio.coroutine
