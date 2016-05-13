@@ -147,7 +147,7 @@ def on_message(message):
         elif message.content == "?supporters":
             highrank = "Lance"
             lowrank = "none"
-            yield from bot.send_message(message.channel, "Here are the awesome people who support me: "+highrank+" "+lowrank)
+            yield from bot.send_message(message.channel, "Here are the awesome people who support me: (High Ranks - $5 pledge) "+highrank+", (Low Ranks - $1 pledge) "+lowrank)
         elif message.content =="?RNG":
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
 
