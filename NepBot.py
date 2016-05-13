@@ -46,27 +46,27 @@ def on_message(message):
                         yield from bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
         elif message.content.startswith('?pingvorg'):
             yield from bot.send_message(message.channel, "<@127188004216373248>")
-        elif message.content.startswith('?rec browser') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?rec browser') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
-        elif message.content.startswith('?rec txt editor') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?rec txt editor') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
-        elif message.content.startswith('?rec dev site') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?rec dev site') and message.author.server.id=='154009582748827648':
        	    yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
-        elif message.content.startswith('?mods') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?mods') and message.author.server.idserver.id=='154009582748827648':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
-        elif message.content.startswith('?info') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?info') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support```")
-        elif message.content.startswith('?lol') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
-        elif message.content.startswith('limewire') and message.author.server.id!='99333280020566016':
+        elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
-       	elif message.content.startswith('?reverb') and message.author.server.id!='99333280020566016':
+       	elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
     	    yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
-       	elif message.content.startswith('?plug') and message.author.server.id!='99333280020566016':
+       	elif message.content.startswith('?plug') and message.author.server.id=='154009582748827648':
     	    yield from bot.send_message(message.channel, "https://github.com/VorgunTheBeta/Neppy ~ Hey thats me, Created by VorgunTheBeta \nhttps://valiantghost.com/ ~ Created by Summonee \nhttp://www.ldsgamers.com/ ~ Created by mechwd \nhttp://www.cibgraphics.com ~ Created by mechwd \nhttps://github.com/cibgraphics/Vanilla5 ~ Created by mechwd \nhttp://www.cyvercom.com/ ~ Created by orctamer \nhttp://xandsoftware.azurewebsites.net/ ~Created by XAND(Eric) \nMessage <@127188004216373248> to have your site added~")
-       	elif message.content.startswith('?shit') and message.author.server.id!='99333280020566016':
+       	elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
        	    yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
        	elif message.content.startswith('?google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
