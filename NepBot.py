@@ -141,7 +141,7 @@ def on_message(message):
         elif message.content.startswith("?joinserver"):
             yield from bot.send_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
         elif message.content == "?support":
-            yield from bot.sent_message(message.channel, "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
+            yield from bot.send_message(message.channel, "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
         elif message.content == "?supporters":
             highrank = "Lance"
             lowrank = "none"
