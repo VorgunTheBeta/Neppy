@@ -52,9 +52,9 @@ def on_message(message):
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
         elif message.content.startswith('?rec dev site') and message.author.server.id=='154009582748827648':
        	    yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
-        elif message.content.startswith('?mods') and message.author.server.idserver.id=='154009582748827648':
+        elif message.content.startswith('?mods') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
-        elif message.content.startswith('?mods') and message.author.server.idserver.id=='156523621240537088':
+        elif message.content.startswith('?mods') and message.author.server.id=='156523621240537088':
             yield from bot.send_message(message.channel, "<@&172639681442217984> you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```")
