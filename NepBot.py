@@ -55,7 +55,7 @@ def on_message(message):
         elif message.content.startswith('?mods') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?mods') and message.author.server.id=='156523621240537088':
-            yield from bot.send_message(message.channel, "<@&172639681442217984> you are needed!~")
+            yield from bot.send_message(message.channel, "Oracles and leaders of <@&172639681442217984>, you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```")
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
