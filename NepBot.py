@@ -90,7 +90,7 @@ def on_message(message):
             google = message.content.replace('?imfeelinglucky ', '').replace(" ", '').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?btnI=&q=' + google
             yield from bot.send_message(message.channel, send)
-        elif "The more you know" or "the more you know" in message.content and message.author.id != "167981908918140928":
+        elif "The more you know" or "the more you know" in message.content and message.author.id != bot.user.id:
             yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif message.content.startswith('?pudding'):
             image = random.choice(["http://img09.deviantart.net/336c/i/2013/317/e/3/nep_s_pudding_by_devilnekox-d6u5ae7.jpg", "https://gotgame.com/wp-content/uploads/2015/02/pudding.jpg", "https://53rg10.files.wordpress.com/2013/09/commie_hyperdimension_neptunia_the_animation_-_10_643170f6-mkv_snapshot_19-17_2013-09-14_16-22-45.jpg", "https://media.giphy.com/media/QfUwLcZ1cbaOQ/giphy.gif", "https://i.ytimg.com/vi/2I4Sjqn17QI/hqdefault.jpg", "https://31.media.tumblr.com/f89a86fff4d005aaeb2ff96afe166d86/tumblr_inline_ncxdqpuqSH1rejbig.gif","https://images-2.discordapp.net/.eJwNwsENwyAMAMBdGACDAQPZBhFEUiUFYfcVdff2dI_6rEtt6hCZvAHsJ9exds0yVulN9zH61co8WddxQxEp9bjbWxis85QwWRPJ5OBSILAxkY8phkBko0eTwXrCfwzZIerX7Or7A8AIIn8.jbMjCJpIS-MJrTyegz9OrU1LPuQ.jpg"])
