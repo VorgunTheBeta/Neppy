@@ -65,7 +65,13 @@ def on_message(message):
             msg = "I was created by {0}~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```"
             yield from bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
-            yield from bot.send_message(message.channel, "I was created by <@127188004216373248>~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support```")
+                user = message.server.get_member_named("VorgunTheBeta#9662")
+            if user.nick == None:
+               name = user.name
+            else:
+               name = user.nick
+            msg = "I was created by {0}~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support```"
+            yield from bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
