@@ -145,8 +145,11 @@ def on_message(message):
                # mes = g.read()
                # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
             
-        elif message.content.startswith('?nickname') and message.author.id =="127188004216373248":
-            nickname = message.content.replace('?nickname ','')
+        elif message.content.startswith('?nick') and message.author.id =="127188004216373248":
+            if message.content == '?nick':
+                nickname = None
+            else:
+                nickname = message.content.replace('?nick ','')
             yield from bot.change_nickname(message.server.me, nickname)
             prtmsg = "Nickname changed to {0} on {1.name}"
             print(prtmsg.format(nickname, message.server))
