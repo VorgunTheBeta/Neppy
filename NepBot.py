@@ -90,7 +90,12 @@ def on_message(message):
             google = message.content.replace('?imfeelinglucky ', '').replace(" ", '').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?btnI=&q=' + google
             yield from bot.send_message(message.channel, send)
-        elif "The more you know" or "the more you know" in message.content:
+        elif "The More You Know" in message.content:
+                if message.author.id == bot.user.id:
+                    return
+                else:
+                    yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
+        elif  "the more you know" in message.content:
                 if message.author.id == bot.user.id:
                     return
                 else:
