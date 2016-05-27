@@ -173,6 +173,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, "Here are the awesome people who support me: (High Ranks - $5 pledge) "+highrank+", (Low Ranks - $1 pledge) "+lowrank)
         elif message.content =="?RNG":
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
+        elif message.content =="?doof doof":
+            yield from bot.send_message(message.channel, "!p https://www.youtube.com/playlist?list=PL1idN54yDQTQTHXHEydxzmTVcYffEtBiH")
 
 @bot.event
 @asyncio.coroutine
