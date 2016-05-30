@@ -81,7 +81,7 @@ def on_message(message):
         elif message.content.startswith('?plug') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "https://github.com/VorgunTheBeta/Neppy ~ Hey thats me, Created by VorgunTheBeta \nhttps://valiantghost.com/ ~ Created by Summonee \nhttp://www.ldsgamers.com/ ~ Created by mechwd \nhttp://www.cibgraphics.com ~ Created by mechwd \nhttps://github.com/cibgraphics/Vanilla5 ~ Created by mechwd \nhttp://www.cyvercom.com/ ~ Created by orctamer \nhttp://xandsoftware.azurewebsites.net/ ~Created by XAND(Eric) \nMessage <@127188004216373248> to have your site added~")
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
-            yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/")
+            yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/ \nhttp://justbasic.conforums.com")
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
