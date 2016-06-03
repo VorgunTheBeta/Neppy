@@ -121,7 +121,7 @@ def on_message(message):
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content.startswith('?notice'):
-            msg = "17/05: Neppy has had some problems and got kinda spammy, sorry to any server owner, i didnt know that she would overflow to other servers. \n13/05: There is now a patreon page for helping out with finding a server and to support the development of me and any other bots, check it out with ?support.~ \nThe ?source command is now interchangeable with ?sauce \nA new command has been added: ?wat, ?joinserver~"
+            msg = "3/6: Im sorry to say, but Neppy has not been moved to the new host yet, as one of the backers stopped backing, so unfortunately Nep-Tunes will also not be on until next month. So sorry that this had to happen, but c'est la vie~"
             yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?mknote'):
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
