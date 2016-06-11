@@ -153,14 +153,17 @@ def on_message(message):
                # mes = g.read()
                # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
             
-        elif message.content.startswith('?nick') and message.author.id =="127188004216373248":
-            if message.content == '?nick':
-                nickname = None
-            else:
-                nickname = message.content.replace('?nick ','')
-            yield from bot.change_nickname(message.server.me, nickname)
-            prtmsg = "Nickname changed to {0} on {1.name}"
-            print(prtmsg.format(nickname, message.server))
+        elif message.content.startswith('?nick') and message.author.id ==:
+                if message.author.id=="127188004216373248":
+                        if message.content == '?nick':
+                                nickname = None
+                        else:
+                                nickname = message.content.replace('?nick ','')
+                        yield from bot.change_nickname(message.server.me, nickname)
+                        prtmsg = "Nickname changed to {0} on {1.name}"
+                        print(prtmsg.format(nickname, message.server))
+                else:
+                        yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/180764185205014530/191021728191873025/youre_gonna_die_now.jpg")
         elif bot.user.mentioned_in(message):
             yield from bot.send_message(message.channel, "Yes?~~~")
         elif message.content.startswith("?joinserver"):
