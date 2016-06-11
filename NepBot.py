@@ -153,7 +153,7 @@ def on_message(message):
                # mes = g.read()
                # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
             
-        elif message.content.startswith('?nick') and message.author.id ==:
+        elif message.content.startswith('?nick'):
                 if message.author.id=="127188004216373248":
                         if message.content == '?nick':
                                 nickname = None
