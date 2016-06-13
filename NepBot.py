@@ -179,7 +179,7 @@ def on_message(message):
         elif message.content =="?doof doof":
             yield from bot.send_message(message.channel, "!p https://www.youtube.com/playlist?list=PL1idN54yDQTQTHXHEydxzmTVcYffEtBiH")
         elif message.content.startswith("?image "):
-            image = message.content.replace("?image ", '').replace(" ", '')
+            image = message.content.replace("?image ", '').replace(" ", '+')
             search = "https://google.com/search?tbm=isch&q="+image
             yield from bot.send_message(message.channel, search)
 
