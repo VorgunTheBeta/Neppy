@@ -178,6 +178,10 @@ def on_message(message):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
         elif message.content =="?doof doof":
             yield from bot.send_message(message.channel, "!p https://www.youtube.com/playlist?list=PL1idN54yDQTQTHXHEydxzmTVcYffEtBiH")
+        elif message.content.startswith("?image "):
+            image = message.content.replace("?image ", '')
+            search = "https://google.com/search?tbm=isch&q="+image
+            yield from bot.send_message(message.channel, search)
 
 @bot.event
 @asyncio.coroutine
