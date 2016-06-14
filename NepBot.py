@@ -2,16 +2,10 @@ import discord
 import asyncio
 import random
 import os.path
-#Include the Dropbox SDK
-import dropbox
 import datetime
 import time
-# Get your app key and secret from the Dropbox developer website
-app_key = 'oftivivyqtuiicu'
-app_secret = 'igg65mw0d65duuk'
 
-#flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
-dbclient = dropbox.Dropbox("hLV5aeCyroAAAAAAAAAABxoK294BSQXMAqGwkCqQOK_LCnKle4EpDE0gplny4zcT")
+
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 bot = discord.Client()
