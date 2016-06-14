@@ -1,2 +1,2 @@
-14/6: Added a new command, ?image. It doesnt embed, but it works~/n
+14/6: Added a new command, ?image. It doesnt embed, but it works~
 So i attempted this, and it wouldnt work, so unfortunately its still using the normal search~
