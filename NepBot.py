@@ -38,8 +38,6 @@ def on_message(message):
                         return
                     else:
                         yield from bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
-        elif message.content.startswith('?pingvorg'):
-            yield from bot.send_message(message.channel, "<@127188004216373248>")
         elif message.content.startswith('?rec browser') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
         elif message.content.startswith('?rec txt editor') and message.author.server.id=='154009582748827648':
@@ -48,8 +46,6 @@ def on_message(message):
             yield from bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
         elif message.content.startswith('?mods') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
-        elif message.content.startswith('?mods') and message.author.server.id=='156523621240537088':
-            yield from bot.send_message(message.channel, "Oracles and leaders of <@&172639681442217984>, you are needed!~")
         elif message.content.startswith('?info') and message.author.server.id=='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
             if user.nick == None:
@@ -202,6 +198,11 @@ def on_member_join(member):
                 channel = discord.Object(id='155225555598442496')
                 message = "{0.name} has joined the server~ <@127010252934610944>"
                 yield from bot.send_message(channel, message.format(member))
+                fname = "Text Stuff/greeting.txt"
+                f = open(fname)
+                msg = f.read()
+                yield from bot.send_message(member, message.format(member))
+                f.close()
 
 @bot.event
 @asyncio.coroutine
