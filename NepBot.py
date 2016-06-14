@@ -85,7 +85,11 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg)
             f.close()
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
-            yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/ \nhttp://justbasic.conforums.com")
+            fname="shit.txt"
+            f=open(fname)
+            msg=f.read()
+            yield from bot.send_message(message.channel, msg)
+            f.close()
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
