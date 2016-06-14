@@ -121,7 +121,7 @@ def on_message(message):
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content.startswith('?notice'):
-            msg = "14/6: Added a new command, ?image. It doesnt embed, but it works~"
+            msg = "14/6: Added a new command, ?image. It doesnt embed, but it works. Im working on getting it to embed~"
             yield from bot.send_message(message.channel, msg)
         elif message.content.startswith('?mknote'):
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
