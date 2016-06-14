@@ -179,6 +179,11 @@ def on_message(message):
             image = message.content.replace("?image ", '').replace(" ", '+')
             search = "https://google.com/search?tbm=isch&q="+image
             yield from bot.send_message(message.channel, search)
+        elif message.content == "?test":
+            fname = ".test"
+            f = open(fname)
+            msg = f.read()
+            yield from bot.send_message(message.channel, msg)
 
 @bot.event
 @asyncio.coroutine
