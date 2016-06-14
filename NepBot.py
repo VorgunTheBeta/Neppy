@@ -56,7 +56,7 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            fname = "info.txt"
+            fname = "Text Stuff/info.txt"
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
@@ -67,7 +67,7 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            fname = "help.txt"
+            fname = "Text Stuff/help.txt"
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
@@ -79,13 +79,13 @@ def on_message(message):
         elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
         elif message.content == '?plug' and message.author.server.id=='154009582748827648':
-            fname = "plug.txt"
+            fname = "Text Stuff/plug.txt"
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg)
             f.close()
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
-            fname="shit.txt"
+            fname="Text Stuff/shit.txt"
             f=open(fname)
             msg=f.read()
             yield from bot.send_message(message.channel, msg)
@@ -129,7 +129,7 @@ def on_message(message):
         elif message.content.startswith('?wat'):
             yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content.startswith('?notice'):
-            fname = "notice.txt"
+            fname = "Text Stuff/notice.txt"
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg)
@@ -193,11 +193,7 @@ def on_message(message):
             image = message.content.replace("?image ", '').replace(" ", '+')
             search = "https://google.com/search?tbm=isch&q="+image
             yield from bot.send_message(message.channel, search)
-        elif message.content == "?test":
-            fname = ".test"
-            f = open(fname)
-            msg = f.read()
-            yield from bot.send_message(message.channel, msg)
+
 
 @bot.event
 @asyncio.coroutine
