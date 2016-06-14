@@ -60,6 +60,7 @@ def on_message(message):
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
+            f.close()
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
             if user.nick == None:
@@ -70,14 +71,19 @@ def on_message(message):
             f = open(fname)
             msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
+            f.close()
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
         elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
-        elif message.content.startswith('?plug') and message.author.server.id=='154009582748827648':
-            yield from bot.send_message(message.channel, "'https://github.com/VorgunTheBeta/Neppy' ~ Hey thats me, Created by VorgunTheBeta \n'https://valiantghost.com/' ~ Created by Summonee \n'http://www.ldsgamers.com/' ~ Created by mechwd \n'http://www.cibgraphics.com' ~ Created by mechwd \n'https://github.com/cibgraphics/Vanilla5' ~ Created by mechwd \n'http://www.cyvercom.com/' ~ Created by orctamer \n'http://xandsoftware.azurewebsites.net/' ~Created by XAND(Eric) \n'http://designite.co/' ~Created by EternalShadow \nMessage <@127188004216373248> to have your site added~")
+        elif message.content == '?plug' and message.author.server.id=='154009582748827648':
+            fname = "plug.txt"
+            f = open(fname)
+            msg = f.read()
+            yield from bot.send_message(message.channel, msg)
+            f.close()
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "Here are some sites that you should learn from what not to do ~ \nhttp://www.lingscars.com/ \nhttp://www.fentek-ind.com/ \nhttps://valiantghost.com/ \nhttp://memekifanwebsite.netlify.com/ \nhttp://justbasic.conforums.com")
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
