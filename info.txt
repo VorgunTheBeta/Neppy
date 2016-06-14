@@ -1,0 +1,3 @@
+I was created by {0}~ 
+Here are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support ?image [search term]```
+Got an idea for a command, sent it to {0} and it might get added~~

@@ -56,7 +56,9 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            msg = "I was created by {0}~ \nHere are my commands =```?hello, ?source, ?shit, ?rec browser, ?rec txt editor, ?mods, ?rec dev site, ?reverb, ?plug, ?google [search term], ?imfeelinglucky [search term], ?notice, ?support```"
+            fname = "info.txt"
+            f = open(fname)
+            msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
@@ -64,7 +66,9 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            msg = "I was created by {0}~ \nHere are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support```"
+            fname = "help.txt"
+            f = open(fname)
+            msg = f.read()
             yield from bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
