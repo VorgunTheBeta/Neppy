@@ -193,8 +193,8 @@ def on_message(message):
             search = "https://google.com/search?tbm=isch&q="+image
             yield from bot.send_message(message.channel, search)
         elif "good nep" in message.content:
-            message = "Good nep {0}, sweet dreams~~~"
-            yield from bot.send_message(message.channel, message.format(message.author))
+            msg = "Good nep {0}, sweet dreams~~~"
+            yield from bot.send_message(message.channel, msg.format(message.author))
 
 
 @bot.event
