@@ -131,7 +131,11 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg)
             f.close()
         elif message.content.startswith('?mknote'):
-            yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
+            note = message.content.replace("?mknote ", '')
+            yield from bot.send_message(message.author, note)
+
+
+            #yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
             #userid= message.author.id
             #fname = userid+'.txt'
             #f = open(fname, 'a')
@@ -145,7 +149,6 @@ def on_message(message):
             #   g = open(fname)
             #   mes = g.read()
             #   dbclient.files_upload(mes, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
-           
             #print('Message written')
         elif message.content =="?notes":
             yield from bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
@@ -157,8 +160,8 @@ def on_message(message):
             #else:
              #   dbclient.files_download_to_file('/'+fname,'/'+fname)
                 #  g = open(fname)
-               # mes = g.read()
-               # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
+                # mes = g.read()
+                # yield from bot.send_message(message.channel, "Your saved notes are: "+mes)
             
         elif message.content.startswith('?nick'):
                 if message.author.id=="127188004216373248":
