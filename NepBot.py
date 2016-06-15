@@ -195,6 +195,8 @@ def on_message(message):
         elif "good nep" in message.content:
             msg = "Good nep {0.mention}, sweet dreams~~~"
             yield from bot.send_message(message.channel, msg.format(message.author))
+        elif message.content == "fucking heroku":
+            yield from bot.send_message(message.channel, "It sucks, I know.")
 
 
 @bot.event
