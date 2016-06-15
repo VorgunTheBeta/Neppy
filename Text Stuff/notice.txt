@@ -1,3 +1,2 @@
-14/6: Added a new command, ?image. It doesnt embed, but it works~
-So i attempted this, and it wouldnt work, so unfortunately its still using the normal search~
-Text files are great, they are now being used for most lengthy commands, just like this one!~
+15/06: The make note command (?mknote) partially works now. It sends you a PM now so it sorta saves them.~
+Please note that this is only a temporary fix.~
