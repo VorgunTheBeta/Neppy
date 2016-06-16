@@ -1,2 +1,1 @@
-15/06: The make note command (?mknote) partially works now. It sends you a PM now so it sorta saves them.~
-Please note that this is only a temporary fix.~
+17/06: You can now request things with ?request. Note that only things that I find appropriate/usefull will be added.

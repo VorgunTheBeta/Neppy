@@ -263,6 +263,8 @@ def on_message(message):
                 yield from bot.send_message(user, pm.format(requestee))
         elif message.content.lower() == "?crying nepgear":
             yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
+        elif message.content.lower() == "?nepune"
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/neptune.txt")))
 
 
 @bot.event
