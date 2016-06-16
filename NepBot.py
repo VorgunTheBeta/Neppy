@@ -255,10 +255,7 @@ def on_member_join(member):
                 yield from bot.send_message(channel, message.format(member))
                 user = discord.User()
                 user.id = member.id
-                fname = "Text Stuff/greeting.txt"
-                f = open(fname)
-                msg = f.read()
-                yield from bot.send_message(user, msg.format(member))
+                yield from bot.send_message(user, Text("Text Stuff/greeting.txt").format(member))
                 f.close()
 
 @bot.event
