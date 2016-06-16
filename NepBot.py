@@ -197,6 +197,9 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg.format(message.author))
         elif message.content == "fucking heroku":
             yield from bot.send_message(message.channel, "It sucks, I know.")
+        elif message.content == "?blanc":
+            image = random.choice(["https://cdn.discordapp.com/attachments/180764185205014530/192839914193158145/1465985959137.jpg"])
+            yield from bot.send_message(message.channel, image)
 
 
 @bot.event
