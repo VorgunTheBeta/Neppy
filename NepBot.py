@@ -213,7 +213,11 @@ def on_message(message):
             image = random.choice(["http://i.imgur.com/Cz8z51v.png","http://i.imgur.com/F9aX42S.jpg","http://i.imgur.com/igs26D7.png","http://i.imgur.com/U9y5Ws2.jpg","http://i.imgur.com/xwQDfGg.png","http://i.imgur.com/ulHntsu.gifv","http://i.imgur.com/xR5ksws.jpg","http://i.imgur.com/IPsSQmp.jpg","http://i.imgur.com/Gh9Dr97.jpg","http://i.imgur.com/jm6uwqZ.jpg"])
             yield from bot.send_message(message.channel, image)
         elif message.content == "?rom and ram":
-            image = random.choice([""])
+            image = random.choice(["http://i.imgur.com/wwu2a53.jpg","http://i.imgur.com/a0Ht0W4.jpg","http://i.imgur.com/LtpYjkI.jpg"])
+            yield from bot.send_message(message.channel, image)
+        elif message.content == "?uni":
+            image = random.choice(["http://i.imgur.com/C9IuCj8.png","http://i.imgur.com/A3VOSDj.jpg","http://i.imgur.com/mdryTCo.png","http://i.imgur.com/WcOgdwp.png","http://i.imgur.com/LgzMZL7.jpg","http://i.imgur.com/d6lYhh7.jpg"])
+            yield from bot.send_message(message.channel, image)
 
 
 @bot.event
