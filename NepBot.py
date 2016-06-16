@@ -253,7 +253,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/histoire.txt")))
         elif message.content.startswith("?request"):
             if message.content == "?request":
-                break;
+                return
             else:
                 msg = message.content.replace("?request ",'')
                 requestee = message.author
