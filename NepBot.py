@@ -206,6 +206,14 @@ def on_message(message):
         elif message.content == "?plutia":
             image = random.choice(["http://i.imgur.com/8zRh0BM.jpg","http://i.imgur.com/xoylGDB.png","http://i.imgur.com/Tm146zR.png","http://i.imgur.com/YQeRpk7.png","http://i.imgur.com/FOm0yY2.jpg","http://i.imgur.com/Nxi9u8B.png","http://i.imgur.com/FVi47Dd.png","http://i.imgur.com/DAjVOm2.png"])
             yield from bot.send_message(message.channel, image)
+        elif message.content == "?noire":
+            image = random.choice(["http://i.imgur.com/GPtJ3sQ.jpg","http://i.imgur.com/QCQ82Hk.jpg","http://i.imgur.com/GS04jfo.png","http://i.imgur.com/Q9nCpkb.png","http://i.imgur.com/SbyyRFO.png","http://i.imgur.com/ehKehgi.jpg","http://i.imgur.com/8iskiUk.png"])
+            yield from bot.send_message(message.channel, image)
+        elif message.content =="?vert":
+            image = random.choice(["http://i.imgur.com/Cz8z51v.png","http://i.imgur.com/F9aX42S.jpg","http://i.imgur.com/igs26D7.png","http://i.imgur.com/U9y5Ws2.jpg","http://i.imgur.com/xwQDfGg.png","http://i.imgur.com/ulHntsu.gifv","http://i.imgur.com/xR5ksws.jpg","http://i.imgur.com/IPsSQmp.jpg","http://i.imgur.com/Gh9Dr97.jpg","http://i.imgur.com/jm6uwqZ.jpg"])
+            yield from bot.send_message(message.channel, image)
+        elif message.content == "?rom and ram":
+            image = random.choice([""])
 
 
 @bot.event
