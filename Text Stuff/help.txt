@@ -1,3 +1,3 @@
 I was created by {0}~ 
-Here are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support, ?image```
+Here are my commands =```?hello, ?source, ?google [search term], ?imfeelinglucky [search term], The More You Know, ?pudding, ?help, ?smug, ?shock, ?wat, ?notice, ?support, ?image, ?blanc, ?noire, ?nepgear, ?nepger, ?rom and ram, ?vert, ?uni```
 Got an idea for a command, sent it to {0} and it might get added~~
