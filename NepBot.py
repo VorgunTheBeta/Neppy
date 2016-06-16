@@ -63,7 +63,6 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            #msg = Text("Text Stuff/help.txt")
             yield from bot.send_message(message.channel, Text("Text Stuff/help.txt").format(name))
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
