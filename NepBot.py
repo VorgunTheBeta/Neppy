@@ -256,7 +256,7 @@ def on_member_join(member):
                 fname = "Text Stuff/greeting.txt"
                 f = open(fname)
                 msg = f.read()
-                yield from bot.send_message(user, message.format(member))
+                yield from bot.send_message(user, msg.format(member))
                 f.close()
 
 @bot.event
