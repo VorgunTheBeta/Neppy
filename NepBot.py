@@ -63,11 +63,7 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            fname = "Text Stuff/help.txt"
-            f = open(fname)
-            msg = f.read()
-            yield from bot.send_message(message.channel, msg.format(name))
-            f.close()
+            yield from bot.send_message(message.channel, Text("Text Stuff/help.txt").format(name))
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
@@ -148,11 +144,7 @@ def on_message(message):
 
 
         elif message.content.startswith('?notice'):
-            fname = "Text Stuff/notice.txt"
-            f = open(fname)
-            msg = f.read()
-            yield from bot.send_message(message.channel, msg)
-            f.close()
+            yield from bot.send_message(message.channel, Notice("Text Stuff/notice.txt"))
 
 
         elif message.content.startswith('?mknote'):
@@ -295,6 +287,11 @@ def FileToArray(filename):
     b.close()
     return pictures
 
+def Text(filename):
+    f = open(filename)
+    notice = f.read()
+    f.close()
+    return text
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
         
