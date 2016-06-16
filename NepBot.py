@@ -96,12 +96,11 @@ def on_message(message):
                     yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
 
         elif message.content.startswith('?pudding'):
-            msg = FileToArray("Text Stuff/pudding.txt") + " \nPUDDING~"
+            msg = random.choice(FileToArray("Text Stuff/pudding.txt")) + " \nPUDDING~"
             yield from bot.send_message(message.channel, msg)
 
         elif message.content.startswith('?smug'):
-            img = random.choice(["http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/10914676_1598608667029772_1771256047_a.jpg","http://41.media.tumblr.com/eae2e1da5f744b4058274b7f3ce93463/tumblr_nn129eZTXb1urtbs9o1_1280.png","https://i.warosu.org/data/jp/img/0140/65/1441685647187.jpg","https://cdn.discordapp.com/attachments/156523621240537088/177982860093816833/1435607123227.jpg"])
-            yield from bot.send_message(message.channel, img)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/smug.txt")))
 
 
         elif message.content.startswith('?dtrip'):
