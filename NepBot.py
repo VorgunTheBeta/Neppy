@@ -4,7 +4,7 @@ import random
 import os.path
 import datetime
 import time
-import array.array
+import array
 
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
@@ -246,7 +246,7 @@ def on_message(message):
         elif message.content == "?blanc":
             fname = "Text Stuff/blanc.txt"
             f = open(fname)
-            pictures = array.fromfile(f,28)
+            pictures = array.array.fromfile(f,28)
             image = random.choice(pictures)
             yield from bot.send_message(message.channel, image)
 
