@@ -252,7 +252,7 @@ def on_member_join(member):
                 message = "{0.name} has joined the server~ <@127010252934610944>"
                 yield from bot.send_message(channel, message.format(member))
                 user = discord.User()
-                user.id = message.author.id
+                user.id = member.id
                 fname = "Text Stuff/greeting.txt"
                 f = open(fname)
                 msg = f.read()
