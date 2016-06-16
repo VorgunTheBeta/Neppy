@@ -249,6 +249,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content == "GO THE FUCK TO SLEEP":
             yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
+        elif message.content.lower() == "?histoire":
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/histoire.txt")))
 
 
 @bot.event
