@@ -193,7 +193,7 @@ def on_message(message):
 
 
         elif message.content == "?supporters":
-            highrank = "Lance"
+            highrank = "Lance, Noire.io"
             lowrank = "none"
             yield from bot.send_message(message.channel, "Here are the awesome people who support me: (High Ranks - $5 pledge) "+highrank+", (Low Ranks - $1 pledge) "+lowrank)
 
