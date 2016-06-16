@@ -244,39 +244,25 @@ def on_message(message):
 
 
         elif message.content == "?blanc":
-            fname = "Text Stuff/blanc.txt"
-            f = open(fname)
-            pics = f.read()
-            pictures = pics.split('\n')
-            image = random.choice(pictures)
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/blanc.txt")))
 
         elif message.content == "?nepgear":
-            fname = "Text Stuff/nepgear.txt"
-            ng = open(fname)
-            pictures = ng.read().split('\n')
-            image = random.choice(pictures)
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/nepgear.txt")))
 
         elif message.content == "?plutia":
-            image = random.choice(["http://i.imgur.com/8zRh0BM.jpg","http://i.imgur.com/xoylGDB.png","http://i.imgur.com/Tm146zR.png","http://i.imgur.com/YQeRpk7.png","http://i.imgur.com/FOm0yY2.jpg","http://i.imgur.com/Nxi9u8B.png","http://i.imgur.com/FVi47Dd.png","http://i.imgur.com/DAjVOm2.png"])
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/plutia.txt")))
 
         elif message.content == "?noire":
-            image = random.choice(["http://i.imgur.com/GPtJ3sQ.jpg","http://i.imgur.com/QCQ82Hk.jpg","http://i.imgur.com/GS04jfo.png","http://i.imgur.com/Q9nCpkb.png","http://i.imgur.com/SbyyRFO.png","http://i.imgur.com/ehKehgi.jpg","http://i.imgur.com/8iskiUk.png"])
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/noire.txt")))
 
         elif message.content =="?vert":
-            image = random.choice(["http://i.imgur.com/Cz8z51v.png","http://i.imgur.com/F9aX42S.jpg","http://i.imgur.com/igs26D7.png","http://i.imgur.com/U9y5Ws2.jpg","http://i.imgur.com/xwQDfGg.png","http://i.imgur.com/ulHntsu.gifv","http://i.imgur.com/xR5ksws.jpg","http://i.imgur.com/IPsSQmp.jpg","http://i.imgur.com/Gh9Dr97.jpg","http://i.imgur.com/jm6uwqZ.jpg"])
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/vert.txt")))
 
         elif message.content == "?rom and ram":
-            image = random.choice(["http://i.imgur.com/wwu2a53.jpg","http://i.imgur.com/a0Ht0W4.jpg","http://i.imgur.com/LtpYjkI.jpg"])
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/romandram.txt")))
 
         elif message.content == "?uni":
-            image = random.choice(["http://i.imgur.com/C9IuCj8.png","http://i.imgur.com/A3VOSDj.jpg","http://i.imgur.com/mdryTCo.png","http://i.imgur.com/WcOgdwp.png","http://i.imgur.com/LgzMZL7.jpg","http://i.imgur.com/d6lYhh7.jpg"])
-            yield from bot.send_message(message.channel, image)
+            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/uni.txt")))
 
 
 @bot.event
@@ -303,6 +289,11 @@ def on_ready():
     for s in bot.servers:
         print(s.name)
 
+def FileToArray(filename):
+    b = open(filename)
+    pictures = b.read().split('\n')
+    b.close()
+    return pictures
 
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
