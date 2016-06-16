@@ -251,6 +251,15 @@ def on_message(message):
             yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
         elif message.content.lower() == "?histoire":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/histoire.txt")))
+        elif message.content.startswith("?request"):
+            msg = message.content.replace("?request ",'')
+            requestee = message.author
+            pm = "{0} requested "+msg
+            user = discord.User()
+            user.id = 127188004216373248
+            yield from bot.send_message(user, pm.format(requestee))
+        elif message.content.lower() == "?crying nepgear":
+            yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
 
 
 @bot.event
