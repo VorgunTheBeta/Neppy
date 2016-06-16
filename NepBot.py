@@ -10,7 +10,7 @@ description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 bot = discord.Client()
 game = discord.Game()
-user = discord.User()
+
         
 
                
@@ -251,10 +251,12 @@ def on_member_join(member):
                 channel = discord.Object(id='155225555598442496')
                 message = "{0.name} has joined the server~ <@127010252934610944>"
                 yield from bot.send_message(channel, message.format(member))
+                user = discord.User()
+                user.id = message.author.id
                 fname = "Text Stuff/greeting.txt"
                 f = open(fname)
                 msg = f.read()
-                yield from bot.send_message(member, message.format(member))
+                yield from bot.send_message(user, message.format(member))
                 f.close()
 
 @bot.event
