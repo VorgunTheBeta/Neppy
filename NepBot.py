@@ -247,6 +247,8 @@ def on_message(message):
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/uni.txt")))
         elif message.content == "?nepger":
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
+        elif message.content == "GO THE FUCK TO SLEEP":
+            yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
 
 
 @bot.event
