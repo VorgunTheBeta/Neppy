@@ -242,6 +242,8 @@ def on_message(message):
 
         elif message.content == "?uni":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/uni.txt")))
+        elif message.content == "?nepger":
+            yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
 
 
 @bot.event
