@@ -200,6 +200,9 @@ def on_message(message):
         elif message.content == "?blanc":
             image = random.choice(["http://i.imgur.com/cNaUaHY.png","http://i.imgur.com/xdJndtZ.png","http://i.imgur.com/2dEIMjb.jpg","http://i.imgur.com/fd3FvAi.png","http://i.imgur.com/OxAKWbK.png","http://i.imgur.com/blwBL1D.jpg","http://i.imgur.com/CUj9IS4.jpg","http://i.imgur.com/gnAiRHO.png","http://i.imgur.com/8Fa5GnG.jpg","http://i.imgur.com/7LNrv7B.jpg","http://i.imgur.com/Cj7BKX6.jpg","http://i.imgur.com/QsPkjvF.png","http://i.imgur.com/Ke5WFAO.gifv","http://i.imgur.com/4cRpSNj.png","http://i.imgur.com/kL29Tnc.jpg","http://i.imgur.com/Q21U7BZ.gifv","http://i.imgur.com/CZAp3GV.gifv","http://i.imgur.com/2TPCkYa.png","http://i.imgur.com/Izb2lcD.jpg","http://i.imgur.com/tOmdxtS.png","http://i.imgur.com/tT14AQy.png","http://i.imgur.com/YWhYliH.png","http://i.imgur.com/tvJurNy.jpg","http://i.imgur.com/3ZIUkiJ.png","http://i.imgur.com/vO2ejWr.jpg","http://i.imgur.com/IirHRwZ.jpg","http://i.imgur.com/DN1ILIH.jpg","http://i.imgur.com/tBziOMa.png"])
             yield from bot.send_message(message.channel, image)
+        elif message.content == "?nepgear":
+            image = random.choice(["http://i.imgur.com/mpjfovu.png","http://i.imgur.com/P8ySmAx.png","http://i.imgur.com/0N8FxGE.png","http://i.imgur.com/fx9J5WG.png","http://i.imgur.com/m1nZTuy.png","http://i.imgur.com/lWQCuyM.jpg","http://i.imgur.com/C1a45ue.png","http://i.imgur.com/5XIdhz1.gifv","http://i.imgur.com/jTOfD1W.jpg"])
+            yield from bot.send_message(message.channel, image)
 
 
 @bot.event
