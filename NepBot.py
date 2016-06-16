@@ -182,7 +182,10 @@ def on_message(message):
                         yield from bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/180764185205014530/191021728191873025/youre_gonna_die_now.jpg")
 
         elif bot.user.mentioned_in(message):
-            yield from bot.send_message(message.channel, "Yes?~~~")
+            if message.author.id == '192351191642931200':
+                yield from bot.send_message(message.channel, "Well aren't you a little tsundere?~")
+            else:
+                yield from bot.send_message(message.channel, "Yes?~~~")
 
 
         elif message.content.startswith("?joinserver"):
