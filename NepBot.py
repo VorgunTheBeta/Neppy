@@ -68,18 +68,9 @@ def on_message(message):
         elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
         elif message.content == '?plug' and message.author.server.id=='154009582748827648':
-            fname = "Text Stuff/plug.txt"
-            f = open(fname)
-            msg = f.read()
-            yield from bot.send_message(message.channel, msg)
-            f.close()
+            yield from bot.send_message(message.channel, Text("Text Stuff/plug.txt"))
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
-            fname="Text Stuff/shit.txt"
-            f=open(fname)
-            msg=f.read()
-            yield from bot.send_message(message.channel, msg)
-            f.close()
-
+            yield from bot.send_message(message.channel, Text("Text Stuff/shit.txt"))
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
