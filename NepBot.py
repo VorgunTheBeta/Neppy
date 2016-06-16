@@ -221,7 +221,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, msg.format(message.author))
 
 
-        elif message.content == "fucking heroku":
+        elif message.content.lower() == "fucking heroku":
             yield from bot.send_message(message.channel, "It sucks, I know.")
 
 
