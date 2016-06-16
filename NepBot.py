@@ -25,7 +25,7 @@ def on_message(message):
                         yield from bot.send_message(message.channel, "What, you don't like me?")
                         user = discord.User()
                         user.id = 127188004216373248
-                        yield from bot.send_message(user, "Neppy is down")
+                        yield from bot.send_message(user, "I'm down")
                         print('message recieved')
                         bot.close()
                         exit()
@@ -271,6 +271,9 @@ def on_ready():
     print("Connected Servers:")
     for s in bot.servers:
         print(s.name)
+    user = discord.User()
+    user.id = 127188004216373248
+    yield from bot.send_message(user, "I'm up")
 
 def FileToArray(filename):
     b = open(filename)
