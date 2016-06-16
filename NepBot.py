@@ -4,7 +4,7 @@ import random
 import os.path
 import datetime
 import time
-import array.array from array
+import array from array
 
 description = "A bot created by VorgunTheBeta"
 utils = discord.utils
