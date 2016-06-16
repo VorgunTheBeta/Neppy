@@ -203,6 +203,9 @@ def on_message(message):
         elif message.content == "?nepgear":
             image = random.choice(["http://i.imgur.com/mpjfovu.png","http://i.imgur.com/P8ySmAx.png","http://i.imgur.com/0N8FxGE.png","http://i.imgur.com/fx9J5WG.png","http://i.imgur.com/m1nZTuy.png","http://i.imgur.com/lWQCuyM.jpg","http://i.imgur.com/C1a45ue.png","http://i.imgur.com/5XIdhz1.gifv","http://i.imgur.com/jTOfD1W.jpg"])
             yield from bot.send_message(message.channel, image)
+        elif message.content == "?plutia":
+            image = random.choice(["http://i.imgur.com/8zRh0BM.jpg","http://i.imgur.com/xoylGDB.png","http://i.imgur.com/Tm146zR.png","http://i.imgur.com/YQeRpk7.png","http://i.imgur.com/FOm0yY2.jpg","http://i.imgur.com/Nxi9u8B.png","http://i.imgur.com/FVi47Dd.png","http://i.imgur.com/DAjVOm2.png"])
+            yield from bot.send_message(message.channel, image)
 
 
 @bot.event
