@@ -53,10 +53,7 @@ def on_message(message):
             else:
                name = user.nick
             fname = "Text Stuff/info.txt"
-            f = open(fname)
-            msg = f.read()
-            yield from bot.send_message(message.channel, msg.format(name))
-            f.close()
+            yield from bot.send_message(message.channel, Text("Text Stuff/info.txt").format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
             if user.nick == None:
@@ -144,7 +141,7 @@ def on_message(message):
 
 
         elif message.content.startswith('?notice'):
-            yield from bot.send_message(message.channel, Notice("Text Stuff/notice.txt"))
+            yield from bot.send_message(message.channel, Text("Text Stuff/notice.txt"))
 
 
         elif message.content.startswith('?mknote'):
