@@ -225,27 +225,27 @@ def on_message(message):
             yield from bot.send_message(message.channel, "It sucks, I know.")
 
 
-        elif message.content == "?blanc":
+        elif message.content.lower() == "?blanc":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/blanc.txt")))
 
-        elif message.content == "?nepgear":
+        elif message.content.lower() == "?nepgear":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/nepgear.txt")))
 
-        elif message.content == "?plutia":
+        elif message.content.lower() == "?plutia":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/plutia.txt")))
 
-        elif message.content == "?noire":
+        elif message.content.lower() == "?noire":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/noire.txt")))
 
-        elif message.content =="?vert":
+        elif message.content.lower() =="?vert":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/vert.txt")))
 
-        elif message.content == "?rom and ram":
+        elif message.content.lower() == "?rom and ram":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/romandram.txt")))
 
-        elif message.content == "?uni":
+        elif message.content.lower() == "?uni":
             yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/uni.txt")))
-        elif message.content == "?nepger":
+        elif message.content.lower() == "?nepger":
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content == "GO THE FUCK TO SLEEP":
             yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
