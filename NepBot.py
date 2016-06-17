@@ -348,7 +348,7 @@ def do_request(URL):
     return response
 def ChangePic(image):
     r = yield from do_request(image)
-    yield from bot.edit_profile(avatar=r.content)
+    yield from bot.edit_profile(avatar=r.content.read())
     print("profile pic changed")
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
