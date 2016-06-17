@@ -338,8 +338,7 @@ def RandomImage(filename):
     pics = FileToArray(filename)
     image = random.choice(pics)
     return image
-@bot.event
-@asyncio.coroutine
+
 def ChangePic(image):
         with aiohttp.get(image) as r:
             if r.status == 200:
