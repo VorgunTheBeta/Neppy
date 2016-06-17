@@ -288,7 +288,7 @@ def on_message(message):
         elif message.content.startswith("?changepic"):
             if message.author.id == '127188004216373248':
                 image = message.content.replace("?changepic ",'')
-                ChangePic(image)
+                yield from ChangePic(image)
                 #image = open('profilepic.png', 'rb')
                 #yield from bot.edit_profile(avatar=image.read())
                 #image.close()
@@ -345,6 +345,7 @@ def do_request(URL):
     response = yield from bot.session.request(
         'GET', URL)
     return response
+@asyncio.coroutine
 def ChangePic(image):
     r = yield from do_request(image)
     yield from bot.edit_profile(avatar=r.content.read())
