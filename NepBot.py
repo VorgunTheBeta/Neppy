@@ -327,5 +327,5 @@ def RandomImage(filename):
     image = random.choice(pics)
     return image
 
-bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
+bot.run(os.environ['API_KEY'])
         
