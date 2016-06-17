@@ -282,6 +282,8 @@ def on_message(message):
                 user = utils.find(lambda m: hugee.lower() in m.display_name.lower(), message.server.members)
                 msg = "*hugs {0.mention}*"
                 yield from bot.send_message(message.channel, msg.format(user))
+        elif message.conent == "AAA":
+            yield from bot.send_message(message.channel, "MOU")
 
 
 @bot.event
