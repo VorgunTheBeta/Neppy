@@ -340,7 +340,7 @@ def RandomImage(filename):
     return image
 
 @async.coroutine
-def ChangePic(image)
+def ChangePic(image):
     with aiohttp.get(image) as r:
         if r.status == 200:
             yield from bot.edit_profile(avatar=r.read())
