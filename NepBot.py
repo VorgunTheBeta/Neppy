@@ -21,7 +21,7 @@ def on_message(message):
                 result = "Hello there~"
                 yield from bot.send_message(message.channel, result)
         elif message.content.startswith('?sleep'):
-                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448':
+                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448' or message.author.id == '146720848424861696':
                         yield from bot.send_message(message.channel, "What, you don't like me?")
                         user = discord.User()
                         user.id = 127188004216373248
