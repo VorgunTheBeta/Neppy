@@ -265,7 +265,7 @@ def on_message(message):
             yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
         elif message.content.lower() == "?neptune":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/neptune.txt"))
-        elif message.conent.lower() == "?if":
+        elif message.content.lower() == "?if":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/IF.txt"))
         elif message.content.lower() == "?compa":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/compa.txt"))
