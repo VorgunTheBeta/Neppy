@@ -284,7 +284,7 @@ def on_message(message):
                 yield from bot.send_message(message.channel, msg.format(user))
         elif message.content == "AAA":
             yield from bot.send_message(message.channel, "MOU")
-        elif message.content == "?changepic"
+        elif message.content == "?changepic":
             if message.auuthor.id == '127188004216373248':
                 image = open("profilepic.png")
                 yield from bot.edit_profile(avatar=image.read())
