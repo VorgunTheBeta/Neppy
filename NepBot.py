@@ -279,7 +279,7 @@ def on_message(message):
             else:
                 user = discord.User()
                 hugee = message.content.replace("?hug ",'')
-                user = utils.get(message.server.members, name = hugee)
+                user = utils.find(lambda m: m.name == hugee, message.server.members)
                 msg = "*hugs {0.mention}*"
                 yield from bot.send_message(message.channel, msg.format(user))
 
