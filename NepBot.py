@@ -273,11 +273,15 @@ def on_message(message):
         elif message.content.lower() == "?marvy":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/marvy.txt"))
         elif message.content.startswith("?hug"):
-            user = discord.User()
-            hugee = message.content.replace("?hug ",'')
-            user = message.server.get_member_named(hugee)
-            msg = "*hugs {0.mention}*"
-            yield from bot.send_message(message.channel, msg.format(user))
+            if message.content == "?hug":
+                msg = "*hugs {0.mention}*"
+                yield from bot.send_message(message.channel, msg.format(message.author))
+            else:
+                user = discord.User()
+                hugee = message.content.replace("?hug ",'')
+                user = message.server.get_member_named(hugee)
+                msg = "*hugs {0.mention}*"
+                yield from bot.send_message(message.channel, msg.format(user))
 
 
 @bot.event
