@@ -258,7 +258,7 @@ def on_message(message):
                 msg = message.content.replace("?request ",'')
                 requestee = message.author
                 server = message.server
-                pm = "{0} requested on {1}"+msg
+                pm = "{0} requested on {1} "+msg
                 user = discord.User()
                 user.id = 127188004216373248
                 yield from bot.send_message(user, pm.format(requestee, server.name))
