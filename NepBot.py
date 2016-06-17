@@ -257,10 +257,11 @@ def on_message(message):
             else:
                 msg = message.content.replace("?request ",'')
                 requestee = message.author
-                pm = "{0} requested "+msg
+                server = message.server
+                pm = "{0} requested on {1}"+msg
                 user = discord.User()
                 user.id = 127188004216373248
-                yield from bot.send_message(user, pm.format(requestee))
+                yield from bot.send_message(user, pm.format(requestee, server.name))
         elif message.content.lower() == "?crying nepgear":
             yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
         elif message.content.lower() == "?neptune":
