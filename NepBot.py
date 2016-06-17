@@ -5,7 +5,7 @@ import os.path
 import datetime
 import time
 import aiohttp
-import urllib
+from urllib import request
 from array import array
 
 description = "A bot created by VorgunTheBeta"
@@ -348,7 +348,7 @@ def do_request(URL):
     return response
 @asyncio.coroutine
 def ChangePic(image):
-    with urllib.request.urlopen(image) as response:
+    with request.urlopen(image) as response:
         yield frombot.edit_profile(avatar=response.read())
         print("profile pic changed")
 
