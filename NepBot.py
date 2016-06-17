@@ -339,11 +339,17 @@ def RandomImage(filename):
     image = random.choice(pics)
     return image
 
+
+@asyncio.coroutine
+def do_request(URL):
+    response = yield from aiohttp.request(
+        'GET', URL,
+    )
+    return response
 def ChangePic(image):
-        with aiohttp.get(image) as r:
-            if r.status == 200:
-                yield from bot.edit_profile(avatar=r.read())
-                print("profile pic changed")
+    r = do_request(image)
+    yield from bot.edit_profile(avatar=r.read())
+    print("profile pic changed")
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
         
