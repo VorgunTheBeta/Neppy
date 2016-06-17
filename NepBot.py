@@ -339,8 +339,8 @@ def RandomImage(filename):
     image = random.choice(pics)
     return image
 
-def ChangePic(image):
-    async with aiohttp.get(image) as r:
+async def ChangePic(image):
+        with aiohttp.get(image) as r:
             if r.status == 200:
                 await bot.edit_profile(avatar=r.read())
                 print("profile pic changed")
