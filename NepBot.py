@@ -311,7 +311,7 @@ def Text(filename):
     f.close()
     return notice
 
-def RandomImage(filename)
+def RandomImage(filename):
     pics = FileToArray(filename)
     image = random.choice(pics)
     return image
