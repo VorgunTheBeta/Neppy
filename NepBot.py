@@ -4,6 +4,8 @@ import random
 import os.path
 import datetime
 import time
+import aiohttp
+from urllib import request
 from array import array
 
 description = "A bot created by VorgunTheBeta"
@@ -21,7 +23,7 @@ def on_message(message):
                 result = "Hello there~"
                 yield from bot.send_message(message.channel, result)
         elif message.content.startswith('?sleep'):
-                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448':
+                    if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448' or message.author.id == '146720848424861696':
                         yield from bot.send_message(message.channel, "What, you don't like me?")
                         user = discord.User()
                         user.id = 127188004216373248
@@ -53,15 +55,15 @@ def on_message(message):
                name = user.name
             else:
                name = user.nick
-            fname = "Text Stuff/info.txt"
-            yield from bot.send_message(message.channel, Text("Text Stuff/info.txt").format(name))
+            fname = "info.txt"
+            yield from bot.send_message(message.channel, Text("info.txt").format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
             if user.nick == None:
                name = user.name
             else:
                name = user.nick
-            yield from bot.send_message(message.channel, Text("Text Stuff/help.txt").format(name))
+            yield from bot.send_message(message.channel, Text("/help.txt").format(name))
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
         elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
@@ -69,9 +71,9 @@ def on_message(message):
         elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
             yield from bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
         elif message.content == '?plug' and message.author.server.id=='154009582748827648':
-            yield from bot.send_message(message.channel, Text("Text Stuff/plug.txt"))
+            yield from bot.send_message(message.channel, Text("plug.txt"))
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
-            yield from bot.send_message(message.channel, Text("Text Stuff/shit.txt"))
+            yield from bot.send_message(message.channel, Text("shit.txt"))
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
@@ -97,11 +99,11 @@ def on_message(message):
                     yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
 
         elif message.content.startswith('?pudding'):
-            msg = RandomImage("Text Stuff/pudding.txt") + " \nPUDDING~"
+            msg = RandomImage("pudding.txt") + " \nPUDDING~"
             yield from bot.send_message(message.channel, msg)
 
         elif message.content.startswith('?smug'):
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/smug.txt"))
+            yield from bot.send_message(message.channel, RandomImage("smug.txt"))
 
 
         elif message.content.startswith('?dtrip'):
@@ -131,7 +133,7 @@ def on_message(message):
 
 
         elif message.content.startswith('?notice'):
-            yield from bot.send_message(message.channel, Text("Text Stuff/notice.txt"))
+            yield from bot.send_message(message.channel, Text("notice.txt"))
 
 
         elif message.content.startswith('?mknote'):
@@ -226,31 +228,31 @@ def on_message(message):
 
 
         elif message.content.lower() == "?blanc":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/blanc.txt"))
+            yield from bot.send_message(message.channel, RandomImage("blanc.txt"))
 
         elif message.content.lower() == "?nepgear":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/nepgear.txt"))
+            yield from bot.send_message(message.channel, RandomImage("nepgear.txt"))
 
         elif message.content.lower() == "?plutia":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/plutia.txt"))
+            yield from bot.send_message(message.channel, RandomImage("plutia.txt"))
 
         elif message.content.lower() == "?noire":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/noire.txt"))
+            yield from bot.send_message(message.channel, RandomImage("noire.txt"))
 
         elif message.content.lower() =="?vert":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/vert.txt"))
+            yield from bot.send_message(message.channel, RandomImage("vert.txt"))
 
         elif message.content.lower() == "?rom and ram":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/romandram.txt"))
+            yield from bot.send_message(message.channel, RandomImage("romandram.txt"))
 
         elif message.content.lower() == "?uni":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/uni.txt"))
+            yield from bot.send_message(message.channel, RandomImage("uni.txt"))
         elif message.content.lower() == "?nepger":
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content == "GO THE FUCK TO SLEEP":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/GTFTS.txt"))
+            yield from bot.send_message(message.channel, RandomImage("GTFTS.txt"))
         elif message.content.lower() == "?histoire":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/histoire.txt"))
+            yield from bot.send_message(message.channel, RandomImage("histoire.txt"))
         elif message.content.startswith("?request"):
             if message.content == "?request":
                 return
@@ -265,13 +267,13 @@ def on_message(message):
         elif message.content.lower() == "?crying nepgear":
             yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
         elif message.content.lower() == "?neptune":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/neptune.txt"))
+            yield from bot.send_message(message.channel, RandomImage("neptune.txt"))
         elif message.content.lower() == "?if":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/IF.txt"))
+            yield from bot.send_message(message.channel, RandomImage("IF.txt"))
         elif message.content.lower() == "?compa":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/compa.txt"))
+            yield from bot.send_message(message.channel, RandomImage("compa.txt"))
         elif message.content.lower() == "?marvy":
-            yield from bot.send_message(message.channel, RandomImage("Text Stuff/marvy.txt"))
+            yield from bot.send_message(message.channel, RandomImage("marvy.txt"))
         elif message.content.startswith("?hug"):
             if message.content == "?hug":
                 msg = "*hugs {0.mention}*"
@@ -282,6 +284,15 @@ def on_message(message):
                 user = utils.find(lambda m: hugee.lower() in m.display_name.lower(), message.server.members)
                 msg = "*hugs {0.mention}*"
                 yield from bot.send_message(message.channel, msg.format(user))
+        elif message.content == "AAA":
+            yield from bot.send_message(message.channel, "MOU")
+        elif message.content.startswith("?changepic"):
+            if message.author.id == '127188004216373248':
+                image = message.content.replace("?changepic ",'')
+                yield from ChangePic(image)
+                #image = open('profilepic.png', 'rb')
+                #yield from bot.edit_profile(avatar=image.read())
+                #image.close()
 
 
 @bot.event
@@ -293,7 +304,7 @@ def on_member_join(member):
                 yield from bot.send_message(channel, message.format(member))
                 user = discord.User()
                 user.id = member.id
-                yield from bot.send_message(user, Text("Text Stuff/greeting.txt").format(member))
+                yield from bot.send_message(user, Text("greeting.txt").format(member))
                 f.close()
 
 @bot.event
@@ -311,13 +322,15 @@ def on_ready():
     yield from bot.send_message(user, "I'm up")
 
 def FileToArray(filename):
-    b = open(filename)
+    fname = "Text Stuff/"+filename
+    b = open(fname)
     pictures = b.read().split('\n')
     b.close()
     return pictures
 
 def Text(filename):
-    f = open(filename)
+    fname = "Text Stuff/"+filename
+    f = open(fname)
     notice = f.read()
     f.close()
     return notice
@@ -327,5 +340,19 @@ def RandomImage(filename):
     image = random.choice(pics)
     return image
 
+
+
+@asyncio.coroutine
+def do_request(URL):
+    client = aiohttp.ClientSession()
+    response = yield from client.get(URL)
+    return response
+@asyncio.coroutine
+def ChangePic(image):
+    with request.urlopen(image) as response:
+        yield from bot.edit_profile(avatar=response.read())
+        print("profile pic changed")
+
 bot.run(os.environ['API_KEY'])
+
         
