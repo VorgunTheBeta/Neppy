@@ -339,7 +339,6 @@ def RandomImage(filename):
     image = random.choice(pics)
     return image
 
-@async.coroutine
 def ChangePic(image):
     with aiohttp.get(image) as r:
         if r.status == 200:
