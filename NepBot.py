@@ -272,6 +272,9 @@ def on_message(message):
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/compa.txt"))
         elif message.content.lower() == "?marvy":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/marvy.txt"))
+        elif message.content.lower() == "?hug":
+            msg = "*hugs {0.mention}*"
+            yield from bot.send_message(message.channel, msg.format(message.author))
 
 
 @bot.event
