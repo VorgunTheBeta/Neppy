@@ -288,7 +288,7 @@ def on_message(message):
         elif message.content.startswith("?changepic"):
             if message.author.id == '127188004216373248':
                 image = message.content.replace("?changepic ",'')
-                ChangePic(image)
+                await ChangePic(image)
                 #image = open('profilepic.png', 'rb')
                 #yield from bot.edit_profile(avatar=image.read())
                 #image.close()
