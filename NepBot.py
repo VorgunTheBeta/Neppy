@@ -347,7 +347,7 @@ def do_request(URL):
     return response
 @asyncio.coroutine
 def ChangePic(image):
-    with urllib.request.urlopen(avatarUrl) as response:
+    with urllib.request.urlopen(image) as response:
         yield frombot.edit_profile(avatar=response.read())
         print("profile pic changed")
 
