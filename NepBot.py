@@ -342,7 +342,7 @@ def RandomImage(filename):
 
 @asyncio.coroutine
 def do_request(URL):
-    response = yield from aiohttp.request(
+    response = yield from bot.session.request(
         'GET', URL)
     return response
 def ChangePic(image):
