@@ -248,7 +248,7 @@ def on_message(message):
         elif message.content.lower() == "?nepger":
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content == "GO THE FUCK TO SLEEP":
-            yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/GTFTS.txt"))
         elif message.content.lower() == "?histoire":
             yield from bot.send_message(message.channel, RandomImage("Text Stuff/histoire.txt"))
         elif message.content.startswith("?request"):
