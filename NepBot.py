@@ -4,6 +4,7 @@ import random
 import os.path
 import datetime
 import time
+import aiohttp
 from array import array
 
 description = "A bot created by VorgunTheBeta"
@@ -284,11 +285,16 @@ def on_message(message):
                 yield from bot.send_message(message.channel, msg.format(user))
         elif message.content == "AAA":
             yield from bot.send_message(message.channel, "MOU")
-        elif message.content == "?changepic":
+        elif message.content.startswith("?changepic"):
             if message.author.id == '127188004216373248':
-                image = open('profilepic.png', 'rb')
-                yield from bot.edit_profile(avatar=image.read())
-                image.close()
+                image = message.content.replace("?changepic ",'')
+                with aiohttp.get(image) as r:
+                    if r.status == 200:
+                        js = yield from r.json()
+                        yield from bot.edit_profile(avatar=js['file'])
+                #image = open('profilepic.png', 'rb')
+                #yield from bot.edit_profile(avatar=image.read())
+                #image.close()
 
 
 @bot.event
@@ -335,6 +341,8 @@ def RandomImage(filename):
     pics = FileToArray(filename)
     image = random.choice(pics)
     return image
+
+
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
         
