@@ -344,7 +344,7 @@ def RandomImage(filename):
 def do_request(URL):
     response = yield from aiohttp.ClientSession.get(URL)
     return response
-
+@asyncio.coroutine
 def ChangePic(image):
     print(image)
     r = yield from do_request(image)
