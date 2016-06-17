@@ -97,11 +97,11 @@ def on_message(message):
                     yield from bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
 
         elif message.content.startswith('?pudding'):
-            msg = random.choice(FileToArray("Text Stuff/pudding.txt")) + " \nPUDDING~"
+            msg = RandomImage("Text Stuff/pudding.txt") + " \nPUDDING~"
             yield from bot.send_message(message.channel, msg)
 
         elif message.content.startswith('?smug'):
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/smug.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/smug.txt"))
 
 
         elif message.content.startswith('?dtrip'):
@@ -226,31 +226,31 @@ def on_message(message):
 
 
         elif message.content.lower() == "?blanc":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/blanc.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/blanc.txt"))
 
         elif message.content.lower() == "?nepgear":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/nepgear.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/nepgear.txt"))
 
         elif message.content.lower() == "?plutia":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/plutia.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/plutia.txt"))
 
         elif message.content.lower() == "?noire":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/noire.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/noire.txt"))
 
         elif message.content.lower() =="?vert":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/vert.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/vert.txt"))
 
         elif message.content.lower() == "?rom and ram":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/romandram.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/romandram.txt"))
 
         elif message.content.lower() == "?uni":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/uni.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/uni.txt"))
         elif message.content.lower() == "?nepger":
             yield from bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content == "GO THE FUCK TO SLEEP":
             yield from bot.send_message(message.channel, "https://youtu.be/Cb0t9TUNLpg?t=59s")
         elif message.content.lower() == "?histoire":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/histoire.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/histoire.txt"))
         elif message.content.startswith("?request"):
             if message.content == "?request":
                 return
@@ -264,7 +264,13 @@ def on_message(message):
         elif message.content.lower() == "?crying nepgear":
             yield from bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
         elif message.content.lower() == "?neptune":
-            yield from bot.send_message(message.channel, random.choice(FileToArray("Text Stuff/neptune.txt")))
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/neptune.txt"))
+        elif message.conent.lower() == "?if":
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/IF.txt"))
+        elif message.content.lower() == "?compa":
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/compa.txt"))
+        elif message.content.lower() == "?marvy":
+            yield from bot.send_message(message.channel, RandomImage("Text Stuff/marvy.txt"))
 
 
 @bot.event
@@ -304,6 +310,11 @@ def Text(filename):
     notice = f.read()
     f.close()
     return notice
+
+def RandomImage(filename)
+    pics = FileToArray(filename)
+    image = random.choice(pics)
+    return image
 
 bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Cf7x5g.jzZYEW7CA_q4ooYXdMVUooFbJXM')
         
