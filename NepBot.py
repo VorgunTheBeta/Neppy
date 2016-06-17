@@ -5,6 +5,7 @@ import os.path
 import datetime
 import time
 import aiohttp
+import urllib
 from array import array
 
 description = "A bot created by VorgunTheBeta"
