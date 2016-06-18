@@ -295,15 +295,12 @@ async def RandomImage(filename):
     image = random.choice(pics)
     return image
 
-async def do_request(URL):
-    client = aiohttp.ClientSession()
-    response = await client.get(URL)
-    return response
-
 async def ChangePic(image):
-    with do_request(image) as response:
-        await bot.edit_profile(avatar=response.read())
-        print("profile pic changed")
+    print(image)
+    with aiohttp.ClientSession() as session:
+        async with session.get(image) as resp:
+             await bot.edit_profile(avatar=await resp.read())
+             print("Profile pic changed")
 
 async def MakeNepRequest(msg,requestee,source):
     pm = "{0} requested on {1} "+msg
