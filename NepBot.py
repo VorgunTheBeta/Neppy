@@ -361,7 +361,7 @@ async def ChangePic(image):
              await bot.edit_profile(avatar=await resp.read())
              print("Profile pic changed")
 
-def MakeNepRequest(msg,requestee,source):
+async def MakeNepRequest(msg,requestee,source):
     pm = "{0} requested on {1} "+msg
     user = discord.User()
     user.id = 127188004216373248
