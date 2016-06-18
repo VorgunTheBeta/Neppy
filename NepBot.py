@@ -335,21 +335,21 @@ async def on_ready():
     user.id = 127188004216373248
     await bot.send_message(user, "I'm up")
 #start of custom fucntions
-async def FileToArray(filename):
+def FileToArray(filename):
     fname = "Text Stuff/"+filename
     b = open(fname)
     pictures = b.read().split('\n')
     b.close()
     return pictures
 
-async def Text(filename):
+def Text(filename):
     fname = "Text Stuff/"+filename
     f = open(fname)
     notice = f.read()
     f.close()
     return notice
 
-async def RandomImage(filename):
+def RandomImage(filename):
     pics = FileToArray(filename)
     image = random.choice(pics)
     return image
@@ -361,7 +361,7 @@ async def ChangePic(image):
              await bot.edit_profile(avatar=await resp.read())
              print("Profile pic changed")
 
-async def MakeNepRequest(msg,requestee,source):
+def MakeNepRequest(msg,requestee,source):
     pm = "{0} requested on {1} "+msg
     user = discord.User()
     user.id = 127188004216373248
