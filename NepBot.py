@@ -52,7 +52,8 @@ async def on_message(message):
             else:
                name = user.nick
             await bot.send_typing(message.channel)
-            await bot.send_message(message.channel, Text("info.txt").format(name))
+            msg = Text("info.txt")
+            await bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
             if user.nick == None:
@@ -60,7 +61,8 @@ async def on_message(message):
             else:
                name = user.nick
             await bot.send_typing(message.channel)
-            await bot.send_message(message.channel, Text("help.txt").format(name))
+            msg = Text("help.txt")
+            await bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?rec browser') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
             await bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
