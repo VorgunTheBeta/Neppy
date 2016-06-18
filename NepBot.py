@@ -55,7 +55,7 @@ async def on_message(message):
                name = user.name
             else:
                name = user.nick
-            await bot.send_message(message.channel, Text("/help.txt").format(name))
+            await bot.send_message(message.channel, Text("help.txt").format(name))
         elif message.content.startswith('?rec browser') and message.author.server.id=='154009582748827648':
             await bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
         elif message.content.startswith('?rec txt editor') and message.author.server.id=='154009582748827648':
