@@ -211,7 +211,7 @@ async def on_message(message):
         elif message.content == "AAA":
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
-            await bot.send_message(message.channel, "MOU~~")
+            await bot.send_message(message.channel, "MOU")
         elif "The More You Know" in message.content:
                 if message.author.id == bot.user.id:
                     return
