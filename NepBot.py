@@ -246,7 +246,7 @@ async def on_message(message):
             await bot.send_message(message.channel, msg)
         elif message.content.startswith('?smug'):
             await bot.send_message(message.channel, RandomImage("smug.txt"))
-            elif message.content.startswith('?shock'):
+        elif message.content.startswith('?shock'):
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/176951338356178945/jeepers.gif")
         elif message.content.startswith('?wat'):
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
