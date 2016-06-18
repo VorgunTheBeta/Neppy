@@ -22,10 +22,12 @@ async def on_message(message):
         if message.content.startswith('?hello'):
                 result = "Hello there~"
                 await bot.send_typing(message.channel)
+                await asyncio.sleep(2)
                 await bot.send_message(message.channel, result)
         elif message.content.startswith('?sleep'):
                     if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448' or message.author.id == '146720848424861696':
                         await bot.send_typing(message.channel)
+                        await asyncio.sleep(2)
                         await bot.send_message(message.channel, "What, you don't like me?")
                         user = discord.User()
                         user.id = 127188004216373248
@@ -35,6 +37,7 @@ async def on_message(message):
                         exit()
                     else:
                         await bot.send_typing(message.channel)
+                        await asyncio.sleep(2)
                         await bot.send_message(message.channel, "http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
         elif message.content.startswith('?status'):
                     if message.author.id == '127188004216373248' or message.author.id == '126899976042184705' or message.author.id == '127010252934610944' or message.author.id=='83677331951976448':
@@ -44,6 +47,7 @@ async def on_message(message):
                         return
                     else:
                         await bot.send_typing(message.channel)
+                        await asyncio.sleep(2)
                         await bot.send_message(message.channel, "http://vignette1.wikia.nocookie.net/meme/images/8/8e/Nope.jpg")
         elif message.content.startswith('?info') and message.author.server.id=='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
@@ -53,6 +57,7 @@ async def on_message(message):
                name = user.nick
             await bot.send_typing(message.channel)
             msg = Text("info.txt")
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?help') and message.author.server.id!='154009582748827648':
             user = message.server.get_member_named("VorgunTheBeta#9662")
@@ -62,27 +67,35 @@ async def on_message(message):
                name = user.nick
             await bot.send_typing(message.channel)
             msg = Text("help.txt")
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, msg.format(name))
         elif message.content.startswith('?rec browser') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
         elif message.content.startswith('?rec txt editor') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
         elif message.content.startswith('?rec dev site') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
         elif message.content.startswith('?mods') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "<@127010252934610944>, <@127188004216373248>, <@126899976042184705> you are needed!~")
         elif message.content.startswith('?reverb') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
         elif message.content == '?plug' and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, Text("plug.txt"))
         elif message.content.startswith('?shit') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, Text("shit.txt"))
         elif message.content.startswith('?nick'):
                 if message.author.id=="127188004216373248":
@@ -95,15 +108,19 @@ async def on_message(message):
                         print(prtmsg.format(nickname, message.server))
                 else:
                     await bot.send_typing(message.channel)
+                    await asyncio.sleep(2)
                     await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/180764185205014530/191021728191873025/youre_gonna_die_now.jpg")
         elif message.content.startswith("?joinserver"):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
         elif message.content.startswith('?notice'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, Text("notice.txt"))
         elif message.content.startswith('?source') or message.content.startswith('?sauce'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
         #end of util commands
         #start of search commands
@@ -111,16 +128,19 @@ async def on_message(message):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?q=' + google
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, send)
         elif message.content.startswith('?imfeelinglucky'):
             google = message.content.replace('?imfeelinglucky ', '').replace(" ", '').replace("<", '%3C').replace(">", '%3E')
             send = 'https://google.com/search?btnI=&q=' + google
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, send)
         elif message.content.startswith("?image "):
             image = message.content.replace("?image ", '').replace(" ", '+')
             search = "https://google.com/search?tbm=isch&q="+image
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, search)
         #end of search commands
         #start of note commands
@@ -144,6 +164,7 @@ async def on_message(message):
             #print('Message written')
         elif message.content =="?notes":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "Please do not use this command, it does not work properly~~~")
             #userid= message.author.id
             #fname = userid + ".txt"
@@ -159,97 +180,123 @@ async def on_message(message):
         #start of Patreon Commands
         elif message.content == "?support":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
         elif message.content == "?supporters":
             highrank = "Lance, Noire.io"
             lowrank = "none"
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "Here are the awesome people who support me: (High Ranks - $5 pledge) "+highrank+", (Low Ranks - $1 pledge) "+lowrank)
         #end of Patreon commands
         #start of music commands
         elif message.content =="?doof doof":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "!p https://www.youtube.com/playlist?list=PL1idN54yDQTQTHXHEydxzmTVcYffEtBiH")
         elif message.content.startswith('?dtrip'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=LHOEUrFOX4Y")
         elif message.content.startswith('?mpm'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "!p https://www.youtube.com/watch?v=bGbdrLQWZpo")
         #end of music commands
         #start of text recog commands
         elif message.content == "GO THE FUCK TO SLEEP":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("GTFTS.txt"))
         elif message.content == "AAA":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "MOU~~")
         elif "The More You Know" in message.content:
                 if message.author.id == bot.user.id:
                     return
                 else:
                     await bot.send_typing(message.channel)
+                    await asyncio.sleep(2)
                     await bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif  "the more you know" in message.content:
                 if message.author.id == bot.user.id:
                     return
                 else:
                     await bot.send_typing(message.channel)
+                    await asyncio.sleep(2)
                     await bot.send_message(message.channel, "http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif "neppy!" in message.content:
             msg = "{0.mention}!~"
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, msg.format(message.author))
         elif "good nep" in message.content:
             msg = "Good nep {0.mention}, sweet dreams~~~"
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, msg.format(message.author))
         elif message.content.lower() == "fucking heroku":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "It sucks, I know.")
         #end of text recog commands
         #start of Neptunia image commands
         elif message.content.lower() == "?blanc":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("blanc.txt"))
         elif message.content.lower() == "?nepgear":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("nepgear.txt"))
         elif message.content.lower() == "?plutia":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("plutia.txt"))
         elif message.content.lower() == "?noire":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("noire.txt"))
         elif message.content.lower() =="?vert":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("vert.txt"))
         elif message.content.lower() == "?rom and ram":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("romandram.txt"))
         elif message.content.lower() == "?uni":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("uni.txt"))
         elif message.content.lower() == "?nepger":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "http://i.imgur.com/XHkYq9d.png")
         elif message.content.lower() == "?histoire":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("histoire.txt"))
         elif message.content.lower() == "?crying nepgear":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "http://i.imgur.com/mvxtHrr.png")
         elif message.content.lower() == "?neptune":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("neptune.txt"))
         elif message.content.lower() == "?if":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("IF.txt"))
         elif message.content.lower() == "?compa":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("compa.txt"))
         elif message.content.lower() == "?marvy":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("marvy.txt"))
         #end of Neptunia image commands
         #misc commands
@@ -257,6 +304,7 @@ async def on_message(message):
             if message.content == "?hug":
                 msg = "*hugs {0.mention}*"
                 await bot.send_typing(message.channel)
+                await asyncio.sleep(2)
                 await bot.send_message(message.channel, msg.format(message.author))
             else:
                 user = discord.User()
@@ -264,6 +312,7 @@ async def on_message(message):
                 user = utils.find(lambda m: hugee.lower() in m.display_name.lower(), message.server.members)
                 msg = "*hugs {0.mention}*"
                 await bot.send_typing(message.channel)
+                await asyncio.sleep(2)
                 await bot.send_message(message.channel, msg.format(user))
         elif message.content.startswith("?changepic"):
             if message.author.id == '127188004216373248':
@@ -283,9 +332,11 @@ async def on_message(message):
         elif bot.user.mentioned_in(message):
             if message.author.id == '192351191642931200':
                 await bot.send_typing(message.channel)
+                await asyncio.sleep(2)
                 await bot.send_message(message.channel, "Well aren't you a little tsundere?~")
             else:
                 await bot.send_typing(message.channel)
+                await asyncio.sleep(2)
                 await bot.send_message(message.channel, "Yes?~~~")
         elif message.content =="?RNG":
             await bot.send_typing(message.channel)
