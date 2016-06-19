@@ -298,6 +298,10 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("marvy.txt"))
+        elif messace.content.lower() == "?wallpaper":
+            await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
+            await bot.send_message(message.channel, RandomImage("wallpapers.txt"))
         #end of Neptunia image commands
         #misc commands
         elif message.content.startswith("?hug"):
