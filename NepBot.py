@@ -364,6 +364,10 @@ async def on_message(message):
         elif message.content.startswith('?wat'):
             await bot.send_typing(message.channel)
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
+        elif message.content == ("?story"):
+            await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
+            await bot.send_message(message.channel, Text("story.txt"))
         #end of misc commands
 
 
