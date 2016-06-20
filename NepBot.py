@@ -348,25 +348,32 @@ async def on_message(message):
                 await bot.send_message(message.channel, "Yes?~~~")
         elif message.content =="?RNG":
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
         elif message.content.startswith('?lol') and message.author.server.id=='154009582748827648':
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "http://ta-sa.org/data/images/laughing_man_big_2.png")
-        elif message.content.startswith('limewire') and message.author.server.id=='154009582748827648':
+        elif message.content.startswith('limewire'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "https://www.youtube.com/watch?v=SAp0xO-LwFs")
         elif message.content.startswith('?pudding'):
             msg = RandomImage("pudding.txt") + " \nPUDDING~"
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, msg)
         elif message.content.startswith('?smug'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, RandomImage("smug.txt"))
         elif message.content.startswith('?shock'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/176951338356178945/jeepers.gif")
         elif message.content.startswith('?wat'):
             await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
             await bot.send_message(message.channel, "https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
         elif message.content == ("?story"):
             await bot.send_typing(message.channel)
