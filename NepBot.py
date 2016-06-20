@@ -240,6 +240,10 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, "It sucks, I know.")
+        elif message.content.upper() == "JUST":
+            await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
+            await bot.send_message(message.channel, random.choice(["DO IT http://i.imgur.com/Vav0hU0.jpg","FUCK MY SHIT UP http://i.imgur.com/ygbXO2F.gif"]))
         #end of text recog commands
         #start of Neptunia image commands
         elif message.content.lower() == "?blanc":
