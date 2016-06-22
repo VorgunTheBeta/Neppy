@@ -122,6 +122,12 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
+        elif message.content.startswith("?what everyone wants")
+            await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
+            user.id = 111872114948063232
+            await bot.send_message(message.channel, "http://i.imgur.com/O3DHIA5.gif")
+            await bot.ban(user, 1)
         #end of util commands
         #start of search commands
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
