@@ -125,8 +125,7 @@ async def on_message(message):
         elif message.content.startswith("?what everyone wants"):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
-            user = discord.User()
-            user.id = 111872114948063232
+            user = message.server.get_member_named("moeslasher#4755")
             await bot.send_message(message.channel, "http://i.imgur.com/O3DHIA5.gif")
             await bot.ban(user, 1)
         #end of util commands
