@@ -129,6 +129,7 @@ async def on_message(message):
             await bot.send_message(message.channel, "http://i.imgur.com/O3DHIA5.gif")
             await bot.ban(user, 1)
         #end of util commands
+
         #start of search commands
         elif message.content.startswith('?google') or message.content.startswith('?Google'):
             google = message.content.replace('?google ', '').replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
