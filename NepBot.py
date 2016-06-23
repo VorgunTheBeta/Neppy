@@ -386,6 +386,10 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, Text("story.txt"))
+        elif message.content == ("??"):
+            await bot.send_typing(message.channel)
+            await asyncio.sleep(2)
+            await bot.send_message(message.channel, RandomImage("what.txt"))
         #end of misc commands
 
 
