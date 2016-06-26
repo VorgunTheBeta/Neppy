@@ -243,7 +243,7 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, msg.format(message.author))
-        elif message.content.lower() == "fucking heroku":
+        elif message.content.startswith("fucking ").lower():
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel, "It sucks, I know.")
