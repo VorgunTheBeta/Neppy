@@ -14,7 +14,7 @@ description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 formatter = commands.HelpFormatter(show_check_failure=False)
 game = discord.Game()
-dbclient = dropbox.Dropbox('hLV5aeCyroAAAAAAAAAAHxfTb412mE0N_1rypf0CorlfWy6NXAtJvW3axbh1dq3Z')
+dbclient = dropbox.Dropbox('')
 bot = commands.Bot(command_prefix='?', description=description, formatter=formatter)
 
 async def send_cmd_help(ctx):
@@ -554,6 +554,6 @@ async def MakeNepRequest(msg,requestee,source):
     await bot.send_message(user, pm.format(requestee, source.name))
 
 #end of custom functions
-bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Clo3IQ.XB9rg0YKfMLYsJgk3OCBYTS7px0')
+bot.run('')
 
 
