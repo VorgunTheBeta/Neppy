@@ -183,28 +183,28 @@ async def google(ctx):
     send = 'https://google.com/search?q=' + src
     await bot.type()
     await asyncio.sleep(2)
-    await bot.say( send)
+    await bot.say(send)
 
-@bot.command(pass_context=True)
-async def im_feeling_lucky(ctx):
-    src = ctx.message.content.replace("?im_feeling_lucky ",'').replace(" ", '').replace("<", '%3C').replace(">", '%3E')
+@bot.command()
+async def im_feeling_lucky(search: str):
+    src = search.replace(" ", '').replace("<", '%3C').replace(">", '%3E')
     send = 'https://google.com/search?btnI=&q=' + src
     await bot.type()
     await asyncio.sleep(2)
-    await bot.say( send)
+    await bot.say(send)
 
-@bot.command(pass_context=True)
-async def image(ctx):
-    img = ctx.message.content.replace("?image ",'').replace(" ", '+')
+@bot.command()
+async def image(search: str):
+    img = search.replace(" ", '+')
     send= "https://google.com/search?tbm=isch&q=" + img
     await bot.type()
     await asyncio.sleep(2)
     await bot.say( send)
     
     
-@bot.command(pass_context=True)
-async def wiki(ctx):
-    src = ctx.message.content.replace("?wiki ",'').replace(" ",'_')
+@bot.command()
+async def wiki(search: str):
+    src = search.replace(" ",'_')
     send = "https://en.wikipedia.org/wiki/"+src
     await bot.type()
     await asyncio.sleep(2)
@@ -235,14 +235,14 @@ async def notes(ctx):
      userid= ctx.message.author.id
      fname = userid + ".txt"
      result = dbclient.files_search('', fname, start=0,max_results=100)
-     if result.matches == None:
-       await bot.say( "I'm so sorry, but I can't seem to find any notes for you~~~")
+     if len(result.matches) == 0:
+        await bot.say( "I'm so sorry, but I can't seem to find any notes for you~~~")
      else:
         dbclient.files_download_to_file(fname, '/'+fname)
         print("file downloaded")
-     g = open(fname)
-     mes = g.read()
-     await bot.say( "Your saved notes are: "+mes)
+        g = open(fname)
+        mes = g.read()
+        await bot.say( "Your saved notes are: "+mes)
 
 @bot.command()
 async def support():
@@ -507,7 +507,7 @@ async def on_message(message):
         
 
         if message.content.startswith("?"):
-            if " " in message.content and "?rec" not in message.content and "make_note" not in message.content and "google" not in message.content and "image" not in message.content and "status" not in message.content and "nick" not in message.content and "request" not in message.content and "change" not in message.content and "hug" not in message.content and "im_feeling_lucky" not in message.content and "wiki" not in message.content:
+            if " " in message.content and "?rec" not in message.content and "make_note" not in message.content and "google" not in message.content and "image" not in message.content and "status" not in message.content and "nick" not in message.content and "request" not in message.content and "change" not in message.content and "hug" not in message.content:
                 message.content = message.content.replace(" ","_")
 # end of text recog commands
         await bot.process_commands(message)
@@ -517,7 +517,7 @@ async def on_message(message):
 @bot.event
 async def on_member_join(member):
         if member.server.id=='154009582748827648':
-                channel = discord.Object(id='155225555598442496')
+                channel = discord.Object(id='160670845675634688')
                 message = "{0.name} has joined the server~"
                 await bot.send_message(channel, message.format(member))
                 user = discord.User()
@@ -570,6 +570,6 @@ async def MakeNepRequest(msg,requestee,source):
     await bot.send_message(user, pm.format(requestee, source.name))
 
 #end of custom functions
-bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Clo3IQ.XB9rg0YKfMLYsJgk3OCBYTS7px0')
+bot.run(Text('token.txt'))
 
 
