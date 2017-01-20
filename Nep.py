@@ -7,6 +7,7 @@ import datetime
 import time
 import aiohttp
 import dropbox
+import dropbox.files
 from urllib import request
 from array import array
 
@@ -14,7 +15,7 @@ description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 formatter = commands.HelpFormatter(show_check_failure=False)
 game = discord.Game()
-dbclient = dropbox.Dropbox('')
+dbclient = dropbox.Dropbox('hLV5aeCyroAAAAAAAAAAHxfTb412mE0N_1rypf0CorlfWy6NXAtJvW3axbh1dq3Z')
 bot = commands.Bot(command_prefix='?', description=description, formatter=formatter)
 
 async def send_cmd_help(ctx):
@@ -71,10 +72,11 @@ async def sleep(ctx, member: discord.Member = None):
         await asyncio.sleep(2)
         await bot.say("http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
 
-@bot.command()
+@bot.command(pass_context=True)
 @owner()
-async def status(msg: str):
-        game.name = msg
+async def status(ctx):
+        msg = ctx.message.content
+        game.name = msg.replace("?status",'')
         await bot.change_status(game)
 
 @bot.command(pass_context=True)
@@ -183,21 +185,30 @@ async def google(ctx):
     await asyncio.sleep(2)
     await bot.say( send)
 
-@bot.command()
-async def im_feeling_lucky(search: str):
-    src = search.replace(" ", '').replace("<", '%3C').replace(">", '%3E')
+@bot.command(pass_context=True)
+async def im_feeling_lucky(ctx):
+    src = ctx.message.content.replace("?im_feeling_lucky ",'').replace(" ", '').replace("<", '%3C').replace(">", '%3E')
     send = 'https://google.com/search?btnI=&q=' + src
     await bot.type()
     await asyncio.sleep(2)
     await bot.say( send)
 
-@bot.command()
-async def image(search: str):
-    img = search.replace(" ", '+')
+@bot.command(pass_context=True)
+async def image(ctx):
+    img = ctx.message.content.replace("?image ",'').replace(" ", '+')
     send= "https://google.com/search?tbm=isch&q=" + img
     await bot.type()
     await asyncio.sleep(2)
     await bot.say( send)
+    
+    
+@bot.command(pass_context=True)
+async def wiki(ctx):
+    src = ctx.message.content.replace("?wiki ",'').replace(" ",'_')
+    send = "https://en.wikipedia.org/wiki/"+src
+    await bot.type()
+    await asyncio.sleep(2)
+    await bot.say(send)
 
 @bot.command(pass_context=True)
 async def make_note(ctx):
@@ -206,20 +217,29 @@ async def make_note(ctx):
     fname = userid+'.txt'
     f = open(fname, 'a')
     f.write(note+"\n")
-    
     f.close()
-    dbclient.files_upload(note, "/"+fname, dropbox.files.WriteMode.overwrite, client_modified=datetime.datetime.now(),mute=True)
+    g = open(fname, 'rb')
+    result = dbclient.files_search('', fname, start=0, max_results=100)
+    if result.matches == None:
+        dbclient.files_upload(g.read(), "/" + fname, dropbox.files.WriteMode.add,
+                              client_modified=datetime.datetime.now(), mute=True)
+    else:
+        dbclient.files_upload(g.read(), "/" + fname, dropbox.files.WriteMode.overwrite,
+                              client_modified=datetime.datetime.now(), mute=True)
+
+    g.close()
     print('Message written')
 
 @bot.command(pass_context=True)
 async def notes(ctx):
      userid= ctx.message.author.id
      fname = userid + ".txt"
-     result = dbclient.files_search('', userid, start=0,max_results=100)
-     if result.matches[0] == '':
+     result = dbclient.files_search('', fname, start=0,max_results=100)
+     if result.matches == None:
        await bot.say( "I'm so sorry, but I can't seem to find any notes for you~~~")
      else:
-       dbclient.files_download_to_file('/'+fname,'/'+fname)
+        dbclient.files_download_to_file(fname, '/'+fname)
+        print("file downloaded")
      g = open(fname)
      mes = g.read()
      await bot.say( "Your saved notes are: "+mes)
@@ -366,10 +386,10 @@ async def hug(ctx, name: str):
 async def change_pic(image: str):
     await ChangePic(image)
 
-@bot.command()
-async def request(req: str):
-    requestee = message.author
-    server = message.server
+@bot.command(pass_context=True)
+async def request(ctx,req: str):
+    requestee = ctx.message.author
+    server = ctx.message.server
     await MakeNepRequest(req, requestee, server)
 
 @bot.command()
@@ -439,6 +459,7 @@ async def nsfw(ctx):
     role = discord.Object(id='199082489598181377')
     await bot.add_roles(member, role)
 
+
 @bot.event    
 async def on_message(message):
         if bot.user.mentioned_in(message):
@@ -483,21 +504,16 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel,msg.format(message.author))
-        elif message.content.startswith("FUCKING"):
-            await bot.send_typing(message.channel)
-            await asyncio.sleep(2)
-            await bot.send_message(message.channel,"It sucks, I know.")
-        elif message.content.upper() == "JUST":
-            await bot.send_typing(message.channel)
-            await asyncio.sleep(2)
-            await bot.send_message(message.channel,random.choice(
-                ["DO IT http://i.imgur.com/Vav0hU0.jpg", "FUCK MY SHIT UP http://i.imgur.com/ygbXO2F.gif"]))
+        
 
         if message.content.startswith("?"):
-            if " " in message.content and "?rec" not in message.content and "make_note" not in message.content and "google" not in message.content and "image" not in message.content and "status" not in message.content and "nick" not in message.content and "request" not in message.content and "change" not in message.content and "hug" not in message.content:
+            if " " in message.content and "?rec" not in message.content and "make_note" not in message.content and "google" not in message.content and "image" not in message.content and "status" not in message.content and "nick" not in message.content and "request" not in message.content and "change" not in message.content and "hug" not in message.content and "im_feeling_lucky" not in message.content and "wiki" not in message.content:
                 message.content = message.content.replace(" ","_")
 # end of text recog commands
         await bot.process_commands(message)
+
+
+
 @bot.event
 async def on_member_join(member):
         if member.server.id=='154009582748827648':
@@ -554,6 +570,6 @@ async def MakeNepRequest(msg,requestee,source):
     await bot.send_message(user, pm.format(requestee, source.name))
 
 #end of custom functions
-bot.run('')
+bot.run('MTY3OTgxOTA4OTE4MTQwOTI4.Clo3IQ.XB9rg0YKfMLYsJgk3OCBYTS7px0')
 
 
