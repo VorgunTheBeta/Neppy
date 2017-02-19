@@ -15,7 +15,7 @@ description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 formatter = commands.HelpFormatter(show_check_failure=False)
 game = discord.Game()
-dbclient = dropbox.Dropbox('hLV5aeCyroAAAAAAAAAAHxfTb412mE0N_1rypf0CorlfWy6NXAtJvW3axbh1dq3Z')
+dbclient = dropbox.Dropbox('')
 bot = commands.Bot(command_prefix='?', description=description, formatter=formatter)
 
 async def send_cmd_help(ctx):
