@@ -15,7 +15,7 @@ description = "A bot created by VorgunTheBeta"
 utils = discord.utils
 formatter = commands.HelpFormatter(show_check_failure=False)
 game = discord.Game()
-dbclient = dropbox.Dropbox('')
+dbclient = dropbox.Dropbox('hLV5aeCyroAAAAAAAAAAHxfTb412mE0N_1rypf0CorlfWy6NXAtJvW3axbh1dq3Z')
 bot = commands.Bot(command_prefix='?', description=description, formatter=formatter)
 
 async def send_cmd_help(ctx):
@@ -53,7 +53,7 @@ async def hello():
     await asyncio.sleep(2)
     await bot.say(result)
 
-@bot.command(pass_contect=True)
+@bot.command(pass_context=True)
 async def sleep(ctx, member: discord.Member = None):
     if member is None:
         member = ctx.message.author
@@ -249,11 +249,14 @@ async def support():
     await bot.type()
     await asyncio.sleep(2)
     await bot.say(
-                           "You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
+                           "You want to help out with keeping me and my sister up and running? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
+    await bot.type()
+    await asyncio.sleep(2)
+    await bot.say("Or if you prefer to make a single donation, go here: https://paypal.me/vorgunthebeta")
 @bot.command()
 async def supporters():
-    highrank = "Lance, Noire.io"
-    lowrank = "none"
+    highrank = "Noire.io"
+    lowrank = "Games Von Dudemeister, blan"
     await bot.type()
     await asyncio.sleep(2)
     await bot.say("Here are the awesome people who support me: (High Ranks - $5 pledge) " + highrank + ", (Low Ranks - $1 pledge) " + lowrank)
@@ -407,7 +410,6 @@ async def lol():
     await bot.say( "http://ta-sa.org/data/images/laughing_man_big_2.png")
 
 @bot.command()
-@webDND()
 async def limewire():
     await bot.type()
     await asyncio.sleep(2)
