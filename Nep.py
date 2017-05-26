@@ -79,18 +79,18 @@ async def status(ctx):
         game.name = msg.replace("?status",'')
         await bot.change_status(game)
 
-@bot.command(pass_context=True)
-@webDND()
-async def info(ctx):
-    user = ctx.message.server.get_member_named("VorgunTheBeta#9662")
-    if user.nick == None:
-        name = user.name
-    else:
-        name = user.nick
+@bot.command()
+async def info():
     await bot.type()
-    msg = Text("info.txt")
+    embed = discord.Embed(colour=discord.Colour.magenta,url="https://github.com/VorgunTheBeta/Neppy",title="My Source")
+    embed.set_thumbnail(url=bot.user.avatar_url)
+    embed.add_field(name="Created by",value="VorgunTheBeta")
+    embed.add_field(name="Made using",value="Python")
+    embed.add_field(name="Server count",value=str(len(bot.servers)))
+    about = ("I'm a simple bot made by VorgunTheBeta. I'm multi purpose.\r\n If you want to support Vorgun, go [here]({})").format("https://www.patreon.com/VorgunTheBeta?ty=h")
+    embed.add_field(name="About Me",value=about,inline=False)
     await asyncio.sleep(2)
-    await bot.say(msg.format(name))
+    await bot.say(embed)
 
 @bot.command(pass_context=True)
 @notWeb()
@@ -160,7 +160,7 @@ async def nick(nickname :str):
     print(prtmsg.format(nickname, message.server))
 
 @bot.command(hidden=True)
-@owner
+@owner()
 async def join_server():
     await bot.type()
     await asyncio.sleep(2)
@@ -201,8 +201,8 @@ async def image(search: str):
     await bot.type()
     await asyncio.sleep(2)
     await bot.say( send)
-    
-    
+
+
 @bot.command(help="Look things up on Wikipedia")
 async def wiki(search: str):
     src = search.replace(" ",'_')
@@ -254,7 +254,7 @@ async def support():
     await bot.type()
     await asyncio.sleep(2)
     await bot.say("Or if you prefer to make a single donation, go here: https://paypal.me/vorgunthebeta")
-    
+
 @bot.command(help="Show current supporters of the patreon")
 async def supporters():
     highrank = "Noire.io"
@@ -311,7 +311,7 @@ async def noire():
     await asyncio.sleep(2)
     await bot.say( RandomImage("noire.txt"))
 
-@bot.command(aliases=['Vert','Green_Heart'],, help="Shows pictures of Vert/Green Heart")
+@bot.command(aliases=['Vert','Green_Heart'], help="Shows pictures of Vert/Green Heart")
 async def vert():
     await bot.type()
     await asyncio.sleep(2)
@@ -452,9 +452,13 @@ async def story():
 
 @bot.command(aliases=['?'])
 async def huh():
-    await bot.type()
-    await asyncio.sleep(2)
-    await bot.say( RandomImage("what.txt"))
+    if(server.id==110373943822540800):
+            return
+    else:
+     await bot.type()
+     await asyncio.sleep(2)
+     await bot.say( RandomImage("what.txt"))
+
 
 @bot.command(hidden=True,pass_context=True)
 @blancship()
@@ -464,19 +468,11 @@ async def nsfw(ctx):
     await bot.add_roles(member, role)
 
 
-@bot.event    
+@bot.event
 async def on_message(message):
-        if bot.user.mentioned_in(message):
-            if message.author.id == '192351191642931200':
-                await bot.send_typing(message.channel)
-                await asyncio.sleep(2)
-                await bot.send_message(message.channel, "Well aren't you a little tsundere?~")
-            else:
-                await bot.send_typing(message.channel)
-                await asyncio.sleep(2)
-                await bot.send_message(message.channel,"Yes?~~~")
 
-        elif message.content == "GO THE FUCK TO SLEEP":
+
+        if message.content == "GO THE FUCK TO SLEEP":
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel,RandomImage("GTFTS.txt"))
@@ -508,7 +504,7 @@ async def on_message(message):
             await bot.send_typing(message.channel)
             await asyncio.sleep(2)
             await bot.send_message(message.channel,msg.format(message.author))
-        
+
 
         if message.content.startswith("?"):
             if " " in message.content and "?rec" not in message.content and "make_note" not in message.content and "google" not in message.content and "image" not in message.content and "status" not in message.content and "nick" not in message.content and "request" not in message.content and "change" not in message.content and "hug" not in message.content and "im_feeling_lucky" not in message.content and "wiki" not in message.content:
@@ -533,11 +529,12 @@ async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
+    print("I am currently in: "+str(count_iterable(bot.servers))+" servers.")
     print('-----')
     print("Connected Servers:")
     for s in bot.servers:
         print(s.name)
-    print(count_iterable(bot.servers))
+
     user = discord.User()
     user.id = 127188004216373248
     await bot.send_message(user, "I'm up")
@@ -579,5 +576,3 @@ def count_iterable(i):
 
 #end of custom functions
 bot.run(Text('token.txt'))
-
-
