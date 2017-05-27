@@ -87,8 +87,10 @@ async def info():
     embed.add_field(name="Created by",value="VorgunTheBeta")
     embed.add_field(name="Made using",value="Python")
     embed.add_field(name="Server count",value=str(len(bot.servers)))
+    embed.add_field(name="Command count",value=str(len(bot.commands)))
     about = ("I'm a simple bot made by VorgunTheBeta. I'm multi purpose.\r\n If you want to support Vorgun, go [here]({})").format("https://www.patreon.com/VorgunTheBeta?ty=h")
     embed.add_field(name="About Me",value=about,inline=False)
+
     await asyncio.sleep(2)
     await bot.say(embed)
 
