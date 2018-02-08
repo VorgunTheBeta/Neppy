@@ -507,9 +507,8 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('-----')
-    print("Connected Servers:")
-    for s in bot.guilds:
-        print(s.name)
+    print("Number of connected guilds:")
+    print(len(bot.user.guilds))
     user = discord.User()
     user.id = 127188004216373248
     await user.send("I'm up")
