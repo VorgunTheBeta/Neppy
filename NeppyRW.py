@@ -50,7 +50,7 @@ def blancship():
 @bot.command()
 async def hello(ctx):
     result = "Hello there~"
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send(result)
 
@@ -60,7 +60,7 @@ async def sleep(ctx):
     member = ctx.author
     trusted = [127188004216373248, 126899976042184705, 12701025934610944, 14672084824861696]
     if member.id in trusted:
-        await ctx.typing()
+        await ctx.trigger_typing()
         await asyncio.sleep(2)
         await ctx.send( "What, you don't like me?")
         user = discord.User()
@@ -71,7 +71,7 @@ async def sleep(ctx):
         bot.close()
         exit()
     else:
-        await ctx.typing()
+        await ctx.trigger_typing()
         await asyncio.sleep(2)
         await ctx.send("http://www.ozsticker.com/ozebayimages/620_dave_product.jpg")
 
@@ -83,7 +83,7 @@ async def status(ctx):
         await bot.change_presence(game=game)
 
 @bot.command()
-async def info():
+async def info(ctx):
     await bot.type()
     embed = discord.Embed(colour=discord.Colour.magenta,url="https://github.com/VorgunTheBeta/Neppy",title="My Source")
     embed.set_thumbnail(url=bot.user.avatar_url)
@@ -105,7 +105,7 @@ async def halp(ctx):
         name = user.name
     else:
         name = user.nick
-    await ctx.typing()
+    ctx.typing()
     msg = Text("help.txt")
     await asyncio.sleep(2)
     await ctx.send( msg.format(name))
@@ -114,46 +114,46 @@ async def halp(ctx):
 @webDND()
 async def rec(ctx):
     if ctx.invoked_subcommand is None:
-        await ctx.typing()
+        await ctx.trigger_typing()
         await asyncio.sleep(2)
         await ctx.send('What are you trying to do?')
 
 @rec.command()
 async def browser(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "The moderators of this immaculate server highly recommend using Vivaldi~ \nhttps://vivaldi.com/?lang=en")
 
 @rec.command()
 async def txt_editor(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("The moderators of this immaculate server highly recommend using Brackets~ \nhttp://brackets.io/")
 
 @rec.command()
 async def dev_site(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "The moderators of this immaculate server highly recommend using Mozilla Developer Network for all your coding help needs~ \nhttps://developer.mozilla.org/en-US/")
 
 @bot.command()
 @webDND()
 async def reverb(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("Ravenslofty recommends using this plugin for all your reverb needs~ \nhttp://magnus.smartelectronix.com/#Ambience")
 
 @bot.command()
 @webDND()
 async def plug(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( Text("plug.txt"))
 
 @bot.command()
 @webDND()
 async def shit(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( Text("shit.txt"))
 
@@ -167,19 +167,19 @@ async def nick(ctx, nickname :str):
 
 @bot.command()
 async def join_server(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "So you want me in your server?~~~ Just use this link: https://goo.gl/NPrZRF")
 
 @bot.command(aliases=['sauce'])
 async def source(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "So you want to see whats behind me huh~ https://github.com/VorgunTheBeta/Neppy")
 
 @bot.command()
 async def notice(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( Text("notice.txt"))
 
@@ -187,7 +187,7 @@ async def notice(ctx):
 async def google(ctx, search: str):
     src = search.replace(" ", '+').replace("<", '%3C').replace(">", '%3E')
     send = 'https://google.com/search?q=' + src
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send(send)
 
@@ -195,7 +195,7 @@ async def google(ctx, search: str):
 async def im_feeling_lucky(ctx, search: str):
     src = search.replace(" ", '').replace("<", '%3C').replace(">", '%3E')
     send = 'https://google.com/search?btnI=&q=' + src
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send(send)
 
@@ -203,7 +203,7 @@ async def im_feeling_lucky(ctx, search: str):
 async def image(ctx, search: str):
     img = search.replace(" ", '+')
     send= "https://google.com/search?tbm=isch&q=" + img
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( send)
 
@@ -212,7 +212,7 @@ async def image(ctx, search: str):
 async def wiki(ctx, search: str):
     src = search.replace(" ",'_')
     send = "https://en.wikipedia.org/wiki/"+src
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send(send)
 
@@ -251,7 +251,7 @@ async def notes(ctx):
 
 @bot.command()
 async def support():
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("You want to help out with finding a host for my sister? Thanks!~~~ https://www.patreon.com/VorgunTheBeta?ty=h")
 
@@ -259,98 +259,98 @@ async def support():
 #async def supporters():
 #    highrank = "Lance, Noire.io"
 #    lowrank = "none"
-#    await ctx.typing()
+#    await ctx.trigger_typing()
 #    await asyncio.sleep(2)
 #    await ctx.send("Here are the awesome people who support me: (High Ranks - $5 pledge) " + highrank + ", (Low Ranks - $1 pledge) " + lowrank)
 
 
 @bot.command(aliases=['Blanc','White_Heart'])
 async def blanc(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("blanc.txt"))
 
 @bot.command(aliases=['Nepgear','Purple_Sister'])
 async def nepgear(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("nepgear.txt"))
 
 @bot.command(aliases=['ploot','Plutia','Iris_Heart'])
 async def plutia(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("plutia.txt"))
 
 @bot.command(aliases=['Noire', 'Black_Heart'])
 async def noire(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("noire.txt"))
 
 @bot.command(aliases=['Vert','Green_Heart'])
 async def vert(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("vert.txt"))
 
 @bot.command(aliases=['ram_and_rom','Rom_and_Ram', 'Ram_and_Rom', 'White_Sisters'])
 async def rom_and_ram(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("romandram.txt"))
 
 @bot.command(aliases=['Uni','Black_Sister'])
 async def uni(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("uni.txt"))
 
 @bot.command()
 async def nepger(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "http://i.imgur.com/XHkYq9d.png")
 
 @bot.command(aliases=['histy','Histoire','Histy'])
 async def histoire(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("histoire.txt"))
 
 @bot.command()
 async def crying_nepgear(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( "http://i.imgur.com/mvxtHrr.png")
 
 @bot.command(aliases=['iffy','Iffy'])
 async def IF(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("IF.txt"))
 
 @bot.command(aliases=['Compa'])
 async def compa(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("compa.txt"))
 
 @bot.command(aliases=['Neptune','Purple_Heart', 'nep'])
 async def neptune(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("neptune.txt"))
 
 @bot.command(aliases=['Marvy'])
 async def marvy(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("marvy.txt"))
 
 @bot.command()
 async def wallpaper(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("wallpapers.txt"))
 
@@ -359,7 +359,7 @@ async def hug(ctx, name: str):
     hugee = name
     user = utils.find(lambda m: hugee.lower() in m.display_name.lower(), ctx.guild.members)
     msg = "*hugs {0.mention}*"
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( msg.format(user))
 
@@ -376,58 +376,58 @@ async def request(ctx,req: str):
 
 @bot.command()
 async def RNG(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("https://cdn.discordapp.com/attachments/126696039733264384/176351354044940289/RNGesus.gif")
 
 @bot.command()
 @webDND()
 async def lol(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("http://ta-sa.org/data/images/laughing_man_big_2.png")
 
 @bot.command()
 @webDND()
 async def limewire(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("https://www.youtube.com/watch?v=SAp0xO-LwFs")
 
 @bot.command()
 async def pudding(ctx):
     msg = RandomImage("pudding.txt") + " \nPUDDING~"
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( msg)
 
 @bot.command()
 async def smug(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("smug.txt"))
 
 @bot.command()
 async def shock(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("https://cdn.discordapp.com/attachments/156523621240537088/176951338356178945/jeepers.gif")
 
 @bot.command()
 async def wat(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send("https://cdn.discordapp.com/attachments/156523621240537088/180092100199579650/1457714637653.gif WAT")
 
 @bot.command(help="The story behind my creation")
 async def story(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( Text("story.txt"))
 
 @bot.command(aliases=['?'])
 async def huh(ctx):
-    await ctx.typing()
+    await ctx.trigger_typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("what.txt"))
 
@@ -443,44 +443,44 @@ async def nsfw(ctx):
 async def on_message(message):
         if bot.user.mentioned_in(message):
             if message.author.id == 192351191642931200:
-                await ctx.typing()
+                await ctx.trigger_typing()
                 await asyncio.sleep(2)
                 await ctx.send("Well aren't you a little tsundere?~")
             else:
-                await ctx.typing()
+                await ctx.trigger_typing()
                 await asyncio.sleep(2)
                 await ctx.send("Yes?~~~")
 
         elif message.content == "GO THE FUCK TO SLEEP":
-            await ctx.typing()
+            await ctx.trigger_typing()
             await asyncio.sleep(2)
             await ctx.send(RandomImage("GTFTS.txt"))
         elif message.content == "AAA":
-            await ctx.typing()
+            await ctx.trigger_typing()
             await asyncio.sleep(2)
             await ctx.send( "MOU")
         elif "The More You Know" in message.content:
             if message.author.id == bot.user.id:
                 return
             else:
-                await ctx.typing()
+                await ctx.trigger_typing()
                 await asyncio.sleep(2)
                 await ctx.send("http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif "the more you know" in message.content:
             if message.author.id == bot.user.id:
                 return
             else:
-                await ctx.typing()
+                await ctx.trigger_typing()
                 await asyncio.sleep(2)
                 await ctx.send("http://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png")
         elif "neppy!" in message.content:
             msg = "{0.mention}!~"
-            await ctx.typing()
+            await ctx.trigger_typing()
             await asyncio.sleep(2)
             await ctx.send(msg.format(message.author))
         elif "good nep" in message.content:
             msg = "Good nep {0.mention}, sweet dreams~~~"
-            await ctx.typing()
+            await ctx.trigger_typing()
             await asyncio.sleep(2)
             await ctx.send(msg.format(message.author))
 
