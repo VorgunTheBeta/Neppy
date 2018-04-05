@@ -1,1 +1,1 @@
-bot: python NepBot.py
+bot: python NeppyRW.py
