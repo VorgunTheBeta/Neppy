@@ -80,7 +80,7 @@ async def status(ctx):
         await bot.change_status(game)
 
 @bot.command()
-async def info():
+async def info(ctx):
     await bot.type()
     embed = discord.Embed(colour=discord.Colour.magenta,url="https://github.com/VorgunTheBeta/Neppy",title="My Source")
     embed.set_thumbnail(url=bot.user.avatar_url)
