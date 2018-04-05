@@ -424,7 +424,7 @@ async def story(ctx):
     await ctx.send( Text("story.txt"))
 
 @bot.command(aliases=['?'])
-async def huh():
+async def huh(ctx):
     await ctx.typing()
     await asyncio.sleep(2)
     await ctx.send( RandomImage("what.txt"))
@@ -508,9 +508,8 @@ async def on_ready():
     print(bot.user.id)
     print('-----')
     print("Number of connected guilds:")
-    print(len(bot.user.guilds))
-    user = discord.User()
-    user.id = 127188004216373248
+    print(len(bot.guilds))
+    user = bot.get_user(127188004216373248)
     await user.send("I'm up")
 #start of custom fucntions
 def FileToArray(filename):
