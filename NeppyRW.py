@@ -84,7 +84,7 @@ async def status(ctx):
 
 @bot.command()
 async def info(ctx):
-    await bot.type()
+    await ctx.trigger_typinh()
     embed = discord.Embed(colour=discord.Colour.magenta,url="https://github.com/VorgunTheBeta/Neppy",title="My Source")
     embed.set_thumbnail(url=bot.user.avatar_url)
     embed.add_field(name="Created by",value="VorgunTheBeta")
