@@ -546,4 +546,4 @@ async def MakeNepRequest(msg,requestee,source):
     await user.send(pm.format(requestee, source.name))
 
 #end of custom functions
-bot.run(Text('token.txt'))
+bot.run(os.environ['API_KEY'])
